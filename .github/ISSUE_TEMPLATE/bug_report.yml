@@ -1,0 +1,93 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not report security vulnerabilities here. Use [SECURITY.md](https://github.com/AethosHub/AgentAccessManager/blob/main/SECURITY.md) instead.
+
+        Logs from a running gateway can contain hostnames, request metadata, and user identifiers. Read anything before you paste it.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead. Exact error text beats a paraphrase.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: From `./aimanager.sh status`, or the image tag you installed.
+      placeholder: v0.1.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: How did you install it?
+      options:
+        - The one-line installer (get.sh / get.ps1)
+        - The release kit, by hand (install.sh / install.ps1)
+        - Air-gapped, from an image bundle
+        - Kubernetes / Helm chart
+        - A preview build
+        - Something else (describe below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Linux
+        - macOS (Intel)
+        - macOS (Apple Silicon)
+        - Windows, Docker Desktop
+        - Windows, WSL2
+    validations:
+      required: true
+
+  - type: input
+    id: docker
+    attributes:
+      label: Docker version
+      description: Output of `docker version --format '{{.Server.Version}}'`.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Tier
+      options:
+        - Free (CORE, no license applied)
+        - Licensed
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: status
+    attributes:
+      label: Container status
+      description: Output of `./aimanager.sh status`. This shows which containers are up, which is the fastest way to tell a startup problem from a configuration one.
+      render: text
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: From `./aimanager.sh logs`. The lines around the failure are more useful than the whole file.
+      render: text
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else
+      description: A reverse proxy in front of it, a non-default port or hostname, a locally hosted model, an air-gapped network, an unusual DNS setup, or anything else that makes your deployment not the default one.

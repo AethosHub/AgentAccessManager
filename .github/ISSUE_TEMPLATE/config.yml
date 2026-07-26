@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation and install guide
+    url: https://aethoshub.github.io/AgentAccessManager/
+    about: Installation, configuration, day-2 operations, and how each module works.
+  - name: Report a security vulnerability
+    url: https://github.com/AethosHub/AgentAccessManager/security/advisories/new
+    about: Please use private reporting for anything security-related, not a public issue.
+  - name: Licensing and commercial support
+    url: https://github.com/AethosHub/AgentAccessManager/blob/main/SUPPORT.md
+    about: Paid tiers, license tokens, and support agreements.
