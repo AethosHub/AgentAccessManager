@@ -1,0 +1,1255 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="account.html">
+      
+      
+        <link rel="next" href="recipes.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>How it is deployed - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-agent-access-manager-is-deployed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How it is deployed
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="deployment.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-image-layered-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One image, layered overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-vs-distributed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone vs distributed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-external-pieces-and-what-each-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The external pieces, and what each is for
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The external pieces, and what each is for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-servers-your-vendors-and-local-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI servers (your vendors and local models)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-always" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL (always)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valkey-distributed-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valkey (distributed only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensearch-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenSearch (Pro)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-storage-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object storage (reports)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMTP (email)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sso-keycloak-or-your-idp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSO: Keycloak or your IdP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-edition-turns-on-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each edition turns on (recap)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-image-layered-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One image, layered overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-vs-distributed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone vs distributed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-external-pieces-and-what-each-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The external pieces, and what each is for
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The external pieces, and what each is for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-servers-your-vendors-and-local-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI servers (your vendors and local models)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-always" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL (always)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valkey-distributed-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valkey (distributed only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensearch-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenSearch (Pro)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-storage-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object storage (reports)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMTP (email)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sso-keycloak-or-your-idp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSO: Keycloak or your IdP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-edition-turns-on-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each edition turns on (recap)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="how-agent-access-manager-is-deployed">How Agent Access Manager is deployed<a class="headerlink" href="#how-agent-access-manager-is-deployed" title="Permanent link">&para;</a></h1>
+<p><em>A plain-language tour of the moving parts: what runs where, what each external piece is for, and how a single box grows into a cluster. This is the operator's view; the packaging and scale-out engineering is in delivery and operations.</em></p>
+<h2 id="one-image-layered-overlays">One image, layered overlays<a class="headerlink" href="#one-image-layered-overlays" title="Permanent link">&para;</a></h2>
+<p>There is a single application image and a single dashboard. You choose an <strong>edition</strong> by deciding which optional infrastructure to switch on, layered as compose overlays (or Helm values) on the base stack. Nothing below is a different build, so growing from Core to Pro to Distributed is a configuration change, not a migration or a reinstall. (The edition matrix is on the <a href="index.html#editions-one-product-tiered">guide landing</a>.)</p>
+<h2 id="standalone-vs-distributed">Standalone vs distributed<a class="headerlink" href="#standalone-vs-distributed" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standalone (single host)</label><label for="__tabbed_1_2">Distributed (scale-out)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Everything on one machine: the app, Postgres, and whichever overlays you enable (OpenSearch for Pro, the AI sidecars for Pro AI, bundled Keycloak for SSO). Rate-limit counters live in the JVM and scheduled maintenance just runs. This is the right choice for most on-prem installs.</p>
+<pre class="aim-diagram"><code>flowchart TD
+    APP["Agent Access Manager (app + dashboard)"]
+    PG[("PostgreSQL")]
+    OS[("OpenSearch (Pro)")]
+    OBJ[("Object store: local dir")]
+    SMTP["SMTP server"]
+    AISRV["AI servers / vendors"]
+    APP --&gt; PG
+    APP -.Pro.-&gt; OS
+    APP --&gt; OBJ
+    APP -.-&gt;|email| SMTP
+    APP --&gt;|LLM calls| AISRV</code></pre>
+</div>
+<div class="tabbed-block">
+<p>The <code>gateway</code> data plane is <strong>stateless</strong>, so you run <strong>N app replicas</strong> behind a load balancer. Shared state moves to external stores so every replica agrees. Single-host multi-replica uses <code>deploy/compose/distributed.yml</code>; multi-machine uses the Helm chart.</p>
+<pre class="aim-diagram"><code>flowchart TD
+    LB["Load balancer"]
+    A1["app #1"]
+    A2["app #2"]
+    A3["app #N"]
+    PG[("PostgreSQL")]
+    VK[("Valkey")]
+    OS[("OpenSearch")]
+    OBJ[("Object store: S3-compatible")]
+    LB --&gt; A1 &amp; A2 &amp; A3
+    A1 &amp; A2 &amp; A3 --&gt; PG
+    A1 &amp; A2 &amp; A3 --&gt;|rate-limit counters + config broadcasts| VK
+    A1 &amp; A2 &amp; A3 --&gt; OS
+    A1 &amp; A2 &amp; A3 --&gt; OBJ</code></pre>
+<ul>
+<li><strong>Valkey</strong> holds the hot rate-limit counters (the only store that scales an org-wide counter across instances) and carries config-change <strong>broadcasts</strong>, so a change on one replica reloads on all.</li>
+<li><strong>ShedLock</strong> makes scheduled maintenance (audit-partition upkeep) a <strong>cluster singleton</strong>, so it runs once cluster-wide.</li>
+<li><strong>OpenSearch</strong> native retention/snapshots are scheduler-free, so they need no cross-instance coordination.</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="the-external-pieces-and-what-each-is-for">The external pieces, and what each is for<a class="headerlink" href="#the-external-pieces-and-what-each-is-for" title="Permanent link">&para;</a></h2>
+<h3 id="ai-servers-your-vendors-and-local-models">AI servers (your vendors and local models)<a class="headerlink" href="#ai-servers-your-vendors-and-local-models" title="Permanent link">&para;</a></h3>
+<p>These are the upstream LLM endpoints Agent Access Manager proxies to: OpenAI, Anthropic, Gemini, Vertex, or anything OpenAI-compatible you self-host (Ollama, vLLM, Groq, LiteLLM). You connect them in <a href="operate.html#catalog-providers-deployments-and-routing">Operate ▸ Catalog</a> as <strong>providers</strong>; their master keys are encrypted at rest and never reach your applications. A self-hosted Ollama or vLLM keeps inference fully on-prem.</p>
+<h3 id="postgresql-always">PostgreSQL (always)<a class="headerlink" href="#postgresql-always" title="Permanent link">&para;</a></h3>
+<p>The system of record for <strong>all governance config</strong> (orgs, keys, catalog, budgets, guardrails, rules) and, on Core/Base, the <strong>audit trail</strong> (<code>audit_event</code>, month-partitioned). Tables reference tenants and scopes by value, not by foreign key, so the hot path is decoupled. This is the one component every edition needs.</p>
+<h3 id="valkey-distributed-only">Valkey (distributed only)<a class="headerlink" href="#valkey-distributed-only" title="Permanent link">&para;</a></h3>
+<p>The open-source Redis fork. It backs the <strong>rate-limit counters</strong> when you run more than one app replica (atomic increments on per-minute buckets) and the <strong>config-broadcast</strong> pub/sub that keeps caches consistent across replicas. On a single box it is unnecessary: the in-JVM counter is used and broadcasts are a no-op. Selected by <code>aim.ratelimit.backend</code> / <code>aim.cluster.backend</code>.</p>
+<h3 id="opensearch-pro">OpenSearch (Pro)<a class="headerlink" href="#opensearch-pro" title="Permanent link">&para;</a></h3>
+<p>The Apache-2.0 search engine (not Elasticsearch) that holds the <strong>SIEM projection</strong>: every governance event, normalised and indexed for fast search and aggregation. Turning it on (<code>aim.siem.enabled</code>) lights up the <a href="investigate.html">Investigate</a> group and promotes OpenSearch to the <strong>audit system of record</strong>, with native ISM retention and optional <strong>snapshot archival</strong> (<code>hot → archive → delete</code>) to a filesystem or any S3-compatible store. It owns its own data and never reads another module's tables, so it can be scaled or split off independently.</p>
+<h3 id="object-storage-reports">Object storage (reports)<a class="headerlink" href="#object-storage-reports" title="Permanent link">&para;</a></h3>
+<p>Where generated <strong>report artifacts</strong> live, kept out of the database. One knob, <code>aim.objectstore.backend</code>:</p>
+<ul>
+<li><code>fs</code> (Core): a local directory. Fine for a single box.</li>
+<li><code>s3</code> (Pro / Distributed): any S3-compatible store (SeaweedFS, MinIO, AWS S3, Cloudflare R2, Wasabi, B2). Required when multiple replicas must all serve a download.</li>
+</ul>
+<p>Every object is <strong>AES-256-GCM encrypted at rest transparently</strong>, so the bucket only ever holds ciphertext and no feature does its own at-rest crypto. The same knob also drives the OpenSearch snapshot repository type. Internals: object store.</p>
+<h3 id="smtp-email">SMTP (email)<a class="headerlink" href="#smtp-email" title="Permanent link">&para;</a></h3>
+<p>A mail server you point Agent Access Manager at (in <a href="account.html#settings">Settings ▸ Mail server</a>) so it can send <strong>notification</strong> emails and emailed <strong>reports</strong>. It is per-org and optional: webhooks and in-app notifications need no mail server. There is a send-test to verify it.</p>
+<h3 id="sso-keycloak-or-your-idp">SSO: Keycloak or your IdP<a class="headerlink" href="#sso-keycloak-or-your-idp" title="Permanent link">&para;</a></h3>
+<p>Sign-in for the <strong>admin plane</strong> is SSO-first. Agent Access Manager can bundle <strong>Keycloak</strong> (behind the same host at <code>/auth</code>) or validate tokens from your existing OIDC provider. People authenticate at the IdP; Agent Access Manager only validates the resulting token (signature, issuer, expiry, audience) and maps roles. The human session and any password/MFA live at the IdP, never in Agent Access Manager. The local Basic admin remains as break-glass. Set with <code>aim.admin.oidc.issuer-uri</code>. Details: authentication.</p>
+<h2 id="what-each-edition-turns-on-recap">What each edition turns on (recap)<a class="headerlink" href="#what-each-edition-turns-on-recap" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th style="text-align: center;">Core</th>
+<th style="text-align: center;">Pro</th>
+<th style="text-align: center;">Pro AI</th>
+<th style="text-align: center;">Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App + PostgreSQL</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Object store</td>
+<td style="text-align: center;">local dir</td>
+<td style="text-align: center;">local dir</td>
+<td style="text-align: center;">local dir</td>
+<td style="text-align: center;"><strong>S3-compatible</strong></td>
+</tr>
+<tr>
+<td>OpenSearch (SIEM + audit SoR)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>AI guardrail sidecar (Presidio)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">optional</td>
+</tr>
+<tr>
+<td>Valkey (cross-instance counters + broadcasts)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>SMTP, SSO</td>
+<td style="text-align: center;">optional</td>
+<td style="text-align: center;">optional</td>
+<td style="text-align: center;">optional</td>
+<td style="text-align: center;">optional</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Start small, grow in place</p>
+<p>Begin on Core (app + Postgres). Add OpenSearch when you want security operations and longer audit retention (Pro). Add the AI sidecars when regex guardrails are not enough (Pro AI). Move counters to Valkey and the object store to S3 when you scale past one replica (Distributed). The dashboard and the data you have collected carry across unchanged.</p>
+</div>
+<hr />
+<p>Back to the <a href="index.html">guide landing</a>, or dig into the engineering in delivery and operations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="account.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Settings &amp; Profile">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Settings & Profile
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="recipes.html" class="md-footer__link md-footer__link--next" aria-label="Next: Recipes &amp; walkthroughs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Recipes & walkthroughs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

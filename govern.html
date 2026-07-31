@@ -1,0 +1,1419 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="operate.html">
+      
+      
+        <link rel="next" href="investigate.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Govern - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#govern" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Govern
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="govern.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrails
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-a-screening-decision-is-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a screening decision is made
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit &amp; usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit &amp; usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-query-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reports
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-report-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a report definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-a-report-is-produced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a report is produced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-a-weekly-cost-report-emailed-as-a-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: a weekly cost report, emailed as a PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-in activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardrails
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guardrails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-a-screening-decision-is-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a screening decision is made
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit &amp; usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit &amp; usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-query-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reports
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-report-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of a report definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-a-report-is-produced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a report is produced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-a-weekly-cost-report-emailed-as-a-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: a weekly cost report, emailed as a PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-in activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="govern">Govern<a class="headerlink" href="#govern" title="Permanent link">&para;</a></h1>
+<p><em>Content safety, alerting, the audit trail, reporting, and the admin sign-in log. This is how you keep the gateway honest and prove it.</em></p>
+<hr />
+<h2 id="guardrails">Guardrails<a class="headerlink" href="#guardrails" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Govern ▸ Guardrails · <strong>Who:</strong> everyone views; <code>MANAGE_GATEWAY</code> to manage · <strong>Editions:</strong> all (regex); <strong>Pro AI</strong> for remote AI-classifier detectors</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 312" role="img" aria-label="Guardrails Policies tab screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="38" font-size="17" font-weight="600" fill="#1B1B1A">Guardrails</text>
+  <rect x="180" y="22" width="68" height="26" rx="8" fill="#EEEDFB"/><text x="214" y="39" font-size="12" font-weight="600" fill="#4F46E5" text-anchor="middle">Policies</text>
+  <text x="266" y="39" font-size="12" fill="#9D9D96">Detectors</text>
+  <text x="350" y="39" font-size="12" fill="#9D9D96">Test</text>
+  <!-- category rail -->
+  <rect x="24" y="60" width="216" height="232" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <rect x="34" y="72" width="196" height="30" rx="8" fill="#EEEDFB"/><circle cx="50" cy="87" r="5" fill="#15803D"/><text x="64" y="91" font-size="12.5" font-weight="600" fill="#4F46E5">PII</text>
+  <circle cx="50" cy="121" r="5" fill="#B3261E"/><text x="64" y="125" font-size="12.5" fill="#6B6B65">SECRET</text>
+  <circle cx="50" cy="151" r="5" fill="#9A5B00"/><text x="64" y="155" font-size="12.5" fill="#6B6B65">TOXICITY</text>
+  <circle cx="50" cy="181" r="5" fill="#9D9D96"/><text x="64" y="185" font-size="12.5" fill="#6B6B65">competitor-names</text>
+  <!-- policy panel -->
+  <rect x="252" y="60" width="544" height="232" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="272" y="90" font-size="14" font-weight="600" fill="#1B1B1A">PII</text>
+  <text x="272" y="124" font-size="12.5" fill="#6B6B65">Request (prompt)</text>
+  <rect x="400" y="111" width="74" height="20" rx="6" fill="#E9F1FD"/><text x="437" y="125" font-size="11" font-weight="600" fill="#1D4ED8" text-anchor="middle">REDACT</text>
+  <text x="486" y="124" font-size="11.5" fill="#9D9D96">mask: TOKEN (reversible)</text>
+  <text x="272" y="156" font-size="12.5" fill="#6B6B65">Response (reply)</text>
+  <rect x="400" y="143" width="56" height="20" rx="6" fill="#FBF1DA"/><text x="428" y="157" font-size="11" font-weight="600" fill="#9A5B00" text-anchor="middle">FLAG</text>
+  <text x="272" y="188" font-size="12.5" fill="#6B6B65">Fail posture</text>
+  <text x="400" y="188" font-size="12" font-weight="600" fill="#1B1B1A">fail-closed: on</text>
+  <line x1="272" y1="206" x2="776" y2="206" stroke="#EAE9E4"/>
+  <text x="272" y="232" font-size="12" fill="#6B6B65">Detectors feeding this category</text>
+  <rect x="272" y="244" width="104" height="22" rx="7" fill="#F4F4F1"/><text x="324" y="259" font-size="11" fill="#1B1B1A" text-anchor="middle">email-regex</text>
+  <rect x="386" y="244" width="172" height="22" rx="7" fill="#F4F4F1"/><text x="472" y="259" font-size="11" fill="#1B1B1A" text-anchor="middle">presidio:EMAIL_ADDRESS · Pro AI</text>
+</svg>
+<figcaption><em>Guardrails ▸ Policies. Pick a category (left, with posture dots), set its inbound and outbound action, mask strategy, and fail posture (right), and see which detectors feed it.</em></figcaption>
+</figure>
+
+<p>Guardrails screen content in <strong>both directions</strong>: the prompt on the way in, and the model's reply on the way out. They are <strong>per-org</strong> with nothing seeded; a fresh org starts empty and the <strong>apply recommended</strong> button plants a sensible starter set through the normal create calls.</p>
+<p>Three building blocks:</p>
+<ul>
+<li><strong>Category</strong> is a named bucket of sensitive content, like <code>PII</code>, <code>SECRET</code>, or a custom <code>competitor-names</code>. It is a free key you define, not a fixed list. A category can be marked an <strong>indicator</strong> (an IOC like an IP/domain/hash) so its matched value is kept on events for threat intel.</li>
+<li><strong>Detector</strong> is what finds the content. A <code>REGEX</code> detector runs in-process (a pattern plus a validator, like a Luhn check for card numbers). A <code>REMOTE</code> detector calls an out-of-band AI classifier: a <strong>document</strong> guard (Llama Guard / Granite / ShieldGemma: one call returns a safe/unsafe verdict) or a <strong>span</strong> analyzer (Presidio: entity offsets you can redact). A span analyzer ships as the <strong>Pro AI</strong> sidecar; a document guard is an endpoint you run and point the detector at.</li>
+<li><strong>Policy</strong> maps a category to an <strong>action</strong> for a scope and direction: <code>ALLOW</code>, <code>FLAG</code> (record only), <code>REDACT</code> (mask the match), or <code>BLOCK</code>. Redaction has strategies (<code>MASK</code>, <code>HASH</code>, reversible <code>TOKEN</code>, <code>PARTIAL</code>), and each policy has a <strong>fail-closed</strong> posture (block the call if a detector cannot finish, rather than proceed with partial findings).</li>
+</ul>
+<h3 id="how-a-screening-decision-is-made">How a screening decision is made<a class="headerlink" href="#how-a-screening-decision-is-made" title="Permanent link">&para;</a></h3>
+<p>Detectors find spans; the policy for the <strong>most specific scope</strong> that covers the matched category decides what happens. The actions escalate, and <code>REDACT</code> carries a strategy:</p>
+<pre class="aim-diagram"><code>flowchart LR
+    TXT["Text (prompt or reply)"] --&gt; DET["Detectors for the org&lt;br/&gt;(regex in-process · remote AI classifier)"]
+    DET --&gt;|"no match"| PASS["Pass through"]
+    DET --&gt;|"match → category"| POL["Resolve policy&lt;br/&gt;(most-specific scope, this direction)"]
+    POL --&gt; ALLOW["ALLOW → pass"]
+    POL --&gt; FLAG["FLAG → pass + record"]
+    POL --&gt; REDACT["REDACT → mask the span&lt;br/&gt;MASK · HASH · TOKEN · PARTIAL"]
+    POL --&gt; BLOCK["BLOCK → stop the call"]
+    REDACT -. "reversible TOKEN" .-&gt; RESTORE["restored for the client at the end"]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Effect</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MASK</code></td>
+<td>Replace with a fixed mask (e.g. <code>****</code>)</td>
+<td>You never need the value back</td>
+</tr>
+<tr>
+<td><code>HASH</code></td>
+<td>Replace with a stable hash</td>
+<td>You want to correlate occurrences without the value</td>
+</tr>
+<tr>
+<td><code>TOKEN</code></td>
+<td>Reversible placeholder, <strong>restored for the client</strong></td>
+<td>The model needs coherent text but the value must not reach the vendor</td>
+</tr>
+<tr>
+<td><code>PARTIAL</code></td>
+<td>Keep part (e.g. last 4 digits)</td>
+<td>A human needs to recognise it</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Fail-open vs fail-closed</p>
+<p>If a detector cannot finish scanning (for example a remote classifier times out), a <strong>fail-closed</strong> policy blocks the call rather than letting unscanned content through; a fail-open policy proceeds. Set this per policy by sensitivity: fail-closed for <code>SECRET</code>, perhaps fail-open for a low-stakes category.</p>
+</div>
+<h3 id="the-three-tabs">The three tabs<a class="headerlink" href="#the-three-tabs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Policies</strong> (category-centric). Pick a category and set its request and response actions, the mask strategy, and the fail-closed posture. You see the detectors feeding it and a posture dot per category.</li>
+<li><strong>Detectors</strong> (the catalogue). Enable, edit, or delete detectors. <code>REGEX</code> today; <code>REMOTE</code> for the AI classifiers.</li>
+<li><strong>Test</strong> (a dry run). A no-model pipeline that screens a prompt you type, lets you <strong>edit the model's hypothetical reply</strong> to inject what it might say, and re-screens it as the response, showing the reversible-redaction round-trip restored at the end. Nothing is sent to a model.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Tool-call arguments are never redacted</p>
+<p>Redacting the arguments of a tool/function call would break the tool. Guardrails <strong>detect and flag or block</strong> tool-call content and surface it to the operator, but never mutate it. Plan policies accordingly.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Where guardrails run in the request</p>
+<p>Request screening happens before routing; response screening happens after the vendor replies, including <strong>inline on streams</strong> (a match spanning two chunks is carried over, and a block stops the stream). It runs on <code>/v1/chat/completions</code>, <code>/v1/responses</code>, and <code>/v1/messages</code>. Internals: guardrails.</p>
+</div>
+<hr />
+<h2 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Govern ▸ Notifications · <strong>Who:</strong> members view; <code>MANAGE_GATEWAY</code> to manage · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>Notifications deliver governance alerts off the same event stream, per-org, over three channel types. Four tabs:</p>
+<ul>
+<li><strong>Channels.</strong> Create email, <strong>webhook</strong> (HMAC-signed, SSRF-safe), or <strong>in-app</strong> channels, each with a <strong>test-send</strong>; the list is paginated. An in-app channel targets <strong>org-wide</strong> (a broadcast to everyone's bell) or a chosen set of <strong>members / teams / projects</strong>, and delivers to the <strong>bell and/or email</strong>.</li>
+<li><strong>Routing.</strong> Per-scope, most-specific-first rules that map an event category to a target. A rule can <strong>fan out</strong> to an audience (a role group) <strong>and</strong> several channels at once - each becomes its own line under the trigger, toggle-able and removable on its own. The <strong>severity</strong> control adapts to the category: a min-threshold for SIEM/detection events, fixed labelled choices (e.g. <em>All reports / Only failures</em>) for the dedicated ones. The list is <strong>paginated by rule</strong>. <strong>Apply recommended</strong> plants a starter set.</li>
+<li><strong>Delivery log.</strong> What was sent, to which channel, and whether it succeeded.</li>
+<li><strong>Preferences.</strong> Noise controls: a dedupe cooldown and a quiet-hours window with a timezone. <code>CRITICAL</code> always sends regardless.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Email needs an SMTP server</p>
+<p>Email channels send through the org's mail server, configured in <a href="account.html#settings">Settings ▸ Mail server</a>; its <strong>Test</strong> button sends to <em>your</em> signed-in email, so you confirm delivery end to end. Webhooks need no external mail, and an in-app channel only needs it when its email delivery is switched on. Internals: notifications.</p>
+</div>
+<hr />
+<h2 id="audit-usage">Audit &amp; usage<a class="headerlink" href="#audit-usage" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Govern ▸ Audit &amp; usage · <strong>Who:</strong> members view (scoped to their org) · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>This is the durable record of <strong>every call</strong>, and the spend rollups built from it. Two things on the page:</p>
+<ul>
+<li><strong>Calls.</strong> A filterable, paged audit table: time range, model, and outcome. Each row is one completion attempt, with its tokens and (if the deployment was priced) its cost.</li>
+<li><strong>Spend by model.</strong> A bar chart of cost / tokens / calls grouped by model.</li>
+</ul>
+<h3 id="how-to-query-it">How to query it<a class="headerlink" href="#how-to-query-it" title="Permanent link">&para;</a></h3>
+<p>The page is a face over the analytics read API; you can hit the same endpoints directly:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /admin/usage/calls</code></td>
+<td>Filterable audit rows (time / model / outcome)</td>
+</tr>
+<tr>
+<td><code>GET /admin/usage/spend</code></td>
+<td>Cost, tokens, calls grouped by model</td>
+</tr>
+<tr>
+<td><code>GET /admin/usage/spend-series</code></td>
+<td>The same per time bucket (hour / day / week / month)</td>
+</tr>
+<tr>
+<td><code>GET /admin/usage/activity</code></td>
+<td>Call/token density by hour-of-day × day (the heatmaps)</td>
+</tr>
+</tbody>
+</table>
+<p>All of them are <strong>org-scoped</strong> and accept an optional <strong>team/project</strong> filter, so the read narrows to the selected scope. A member is forced to their own org; the platform admin may pass a scope. This same data feeds the <a href="operate.html#budgets">budget explorer</a> trends and the <a href="operate.html#rate-limits">rate limits</a> activity tab.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Where the audit trail physically lives (it follows the tier)</p>
+<p>On <strong>Core / Base</strong>, the system of record is the Postgres <code>audit_event</code> table, month-partitioned, with opt-in retention (<code>aim.retention.audit-months</code>, default keep-forever). On <strong>Pro</strong> (SIEM on), <strong>OpenSearch</strong> becomes the audit system of record and these reads are served from it, with longer retention and snapshot archival. The page and its API are identical either way. Internals: analytics.</p>
+</div>
+<hr />
+<h2 id="reports">Reports<a class="headerlink" href="#reports" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Govern ▸ Reports · <strong>Who:</strong> <code>VIEW_REPORTS</code> to view; <code>MANAGE_REPORTS</code> (operator and up) to author / schedule / run · <strong>Editions:</strong> all</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 226" role="img" aria-label="Reports page screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="38" font-size="17" font-weight="600" fill="#1B1B1A">Reports</text>
+  <rect x="664" y="19" width="132" height="30" rx="8" fill="#4F46E5"/><text x="730" y="39" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">+ New report</text>
+  <!-- card 1 -->
+  <rect x="24" y="62" width="246" height="148" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="90" font-size="13" font-weight="600" fill="#1B1B1A">Weekly cost digest</text>
+  <rect x="196" y="76" width="58" height="18" rx="9" fill="#EEEDFB"/><text x="225" y="89" font-size="10" fill="#4F46E5" text-anchor="middle">password</text>
+  <text x="40" y="110" font-size="11.5" fill="#6B6B65">PDF · Mondays 08:00</text>
+  <circle cx="46" cy="134" r="5" fill="#15803D"/><text x="58" y="138" font-size="11.5" fill="#6B6B65">Last generated 2h ago</text>
+  <rect x="40" y="156" width="96" height="28" rx="8" fill="#FFFFFF" stroke="#DCDBD5"/><text x="88" y="174" font-size="12" font-weight="500" fill="#1B1B1A" text-anchor="middle">Download</text>
+  <!-- card 2 -->
+  <rect x="286" y="62" width="246" height="148" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="302" y="90" font-size="13" font-weight="600" fill="#1B1B1A">Guardrail findings</text>
+  <text x="302" y="110" font-size="11.5" fill="#6B6B65">CSV · daily</text>
+  <circle cx="308" cy="134" r="5" fill="#1D4ED8"/><text x="320" y="138" font-size="11.5" fill="#1D4ED8">Generating…</text>
+  <!-- card 3 -->
+  <rect x="548" y="62" width="246" height="148" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="564" y="90" font-size="13" font-weight="600" fill="#1B1B1A">Board pack</text>
+  <text x="564" y="110" font-size="11.5" fill="#6B6B65">PDF · monthly</text>
+  <circle cx="570" cy="134" r="5" fill="#9D9D96"/><text x="582" y="138" font-size="11.5" fill="#9D9D96">Never generated</text>
+</svg>
+<figcaption><em>Reports. Each definition is a card showing format, schedule, and live run status (Last generated / Generating / Never generated). The lock badge marks a password-protected download.</em></figcaption>
+</figure>
+
+<p>Reports turn the usage data into shareable artifacts: branded <strong>PDF</strong>, <strong>CSV</strong>, <strong>JSON</strong>, or <strong>HTML</strong>, on demand or on a schedule. A report has a <strong>definition</strong> (saved spec) and produces <strong>runs</strong> (generated artifacts, stored with a TTL).</p>
+<h3 id="anatomy-of-a-report-definition">Anatomy of a report definition<a class="headerlink" href="#anatomy-of-a-report-definition" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>dataset</strong> (what to summarise): usage / spend by model, activity, guardrail findings, and similar curated datasets. You pick from a typed catalogue, not raw SQL.</li>
+<li>A <strong>scope and time window</strong> (org / team / project; this period vs last).</li>
+<li>A <strong>format</strong> (PDF / CSV / JSON / HTML), an optional <strong>schedule</strong> (cron-like), and a <strong>delivery mode</strong>: <em>link only</em> (the secure default - a finished report notifies with just a dashboard link, no data leaves) or <em>attach the file</em> (email attaches it, a JSON webhook posts it). Delivery routes through <a href="#notifications">Notifications</a>; the link opens the <strong>Generated</strong> tab to download.</li>
+<li>An optional <strong>password</strong> that protects the downloaded artifact itself: a native-password PDF, a self-decrypting HTML page, or a <code>.gpg</code> file for CSV/JSON. (Separately, every stored artifact is always encrypted at rest by the object store; the password is the extra, recipient-facing layer.)</li>
+</ul>
+<p>You pick the dataset from a <strong>typed catalogue</strong>, never raw SQL, so a report definition is portable across the Postgres and OpenSearch backends unchanged:</p>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Summarises</th>
+<th>Typical format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spend by model</td>
+<td>Cost / tokens / calls grouped by model, with period-over-period deltas</td>
+<td>PDF / CSV</td>
+</tr>
+<tr>
+<td>Usage over time</td>
+<td>The same per time bucket (hour / day / week / month)</td>
+<td>PDF / CSV</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>Request density by hour and day</td>
+<td>PDF</td>
+</tr>
+<tr>
+<td>Guardrail findings</td>
+<td>Categories flagged / redacted / blocked</td>
+<td>CSV / JSON</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-a-report-is-produced">How a report is produced<a class="headerlink" href="#how-a-report-is-produced" title="Permanent link">&para;</a></h3>
+<pre class="aim-diagram"><code>flowchart LR
+    DEF["Definition (saved spec)"] --&gt;|"Run now / schedule"| Q["Query the usage data&lt;br/&gt;(typed dataset + filter + group-by)"]
+    Q --&gt; R["Render&lt;br/&gt;PDF · CSV · JSON · HTML"]
+    R --&gt; SEAL["Seal if a password is set&lt;br/&gt;(PDF pw · self-decrypting HTML · .gpg)"]
+    SEAL --&gt; STORE["Object store (encrypted at rest)&lt;br/&gt;+ a report_run row, with TTL"]
+    STORE --&gt; DL["Gated download / delivery"]</code></pre>
+<p>A scheduled definition fires on its cron; an on-demand one fires on <strong>Run now</strong>. Either way it produces a <strong>run</strong> (the artifact plus its metadata), which is what you download.</p>
+<h3 id="example-a-weekly-cost-report-emailed-as-a-pdf">Example: a weekly cost report, emailed as a PDF<a class="headerlink" href="#example-a-weekly-cost-report-emailed-as-a-pdf" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>New report</strong> → name it "Weekly cost digest."</li>
+<li><strong>Dataset:</strong> spend by model. <strong>Scope:</strong> your org. <strong>Window:</strong> last 7 days, with period-over-period deltas on the KPI tiles.</li>
+<li><strong>Format:</strong> PDF (branded with your org logo and accent colour).</li>
+<li><strong>Schedule:</strong> every Monday 08:00. <strong>Delivery:</strong> <em>attach the file</em> so the PDF rides the email (leave it on <em>link only</em> to send just a dashboard link instead). Recipients are whoever your <a href="#notifications">Notifications</a> routing sends the <code>report</code> category to.</li>
+<li>Optionally set a <strong>password</strong>, so the emailed PDF needs it to open.</li>
+<li>Save. Hit <strong>Run now</strong> to generate one immediately; the card shows "Generating…", then "Last generated …" when ready, with a <strong>Download</strong> action.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># The same, via the API:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://your-gateway/admin/reports/definitions<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span>@report.json
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># then trigger a run:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://your-gateway/admin/reports/definitions/<span class="o">{</span>id<span class="o">}</span>/run
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Storage, TTL, and the artifact</p>
+<p>Generated bytes live in the <strong>object store</strong> (filesystem on Core, S3-compatible on Pro/Distributed), not the database, with a TTL (default one day) and per-org ceilings. Downloads stream through the gated controller, so tenant isolation holds. Internals: reports and object store.</p>
+</div>
+<hr />
+<h2 id="sign-in-activity">Sign-in activity<a class="headerlink" href="#sign-in-activity" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Govern ▸ Sign-in activity · <strong>Who:</strong> <code>VIEW_SECURITY</code> · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>A filterable, paged log of admin sign-ins: successes and failures, with actor search. This is where you spot failed or suspicious access to the <strong>admin plane</strong> (brute-force attempts, logins from unexpected actors). It reads <code>GET /admin/auth-events</code>. It complements <a href="investigate.html#siem">SIEM</a>, which covers the data-plane and governance event stream.</p>
+<hr />
+<p>Next: <strong><a href="investigate.html">Investigate →</a></strong> (SIEM, UEBA, SOAR), or <strong><a href="account.html">Settings &amp; Profile →</a></strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="operate.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Operate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="investigate.html" class="md-footer__link md-footer__link--next" aria-label="Next: Investigate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Investigate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

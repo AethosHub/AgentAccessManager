@@ -1,0 +1,279 @@
+/* ============================================================
+   Agent Access Manager docs  ·  theme + widgets
+   ============================================================
+
+   Colours are the AethosHub brand palette (themelogo/brand-pack/README.txt + themelogo/README.txt), so the docs
+   read like the product landing page: brand blue #2F7CFF (deep #0250BE for light-bg links), ink #0B0F1A, card
+   dark #0F141C, and the navy gradient #0250BE → #02409A → #011C48 for hero surfaces. Header stays navy in both
+   schemes, like the site's navbar. If the brand pack changes, change it here.
+   ============================================================ */
+
+/* The first palette entry follows the system theme, so data-md-color-scheme is set by JavaScript at runtime and is
+   absent from the served HTML. Without a fallback the page renders unstyled for a frame. Light values, matching the
+   light scheme below. */
+:root,
+[data-md-color-scheme="default"] {
+  --aim-bg: #ffffff;
+  --aim-surface: #ffffff;
+  --aim-elev: #f3f6fc;
+  --aim-line: #e4eaf4;
+  --aim-line2: #d3dcec;
+  --aim-fg: #0b0f1a;
+  --aim-muted: #4c5567;
+  --aim-faint: #8a94a8;
+  /* Deep brand blue for links/accents on white (readable); bright #2F7CFF is the hover/hi tone. */
+  --aim-brand: #0250be;
+  --aim-brand-hi: #2f7cff;
+  --aim-brand-bg: #e9f1ff;
+  --aim-ok: #15803d;
+  --aim-warn: #9a5b00;
+
+  --aim-card-bg: var(--aim-surface);
+  --aim-card-border: var(--aim-line);
+
+  /* Material's own variables, so the whole theme follows and not just the custom widgets. */
+  --md-default-bg-color: var(--aim-bg);
+  --md-default-fg-color: var(--aim-fg);
+  --md-default-fg-color--light: var(--aim-muted);
+  --md-default-fg-color--lighter: var(--aim-faint);
+  --md-default-fg-color--lightest: var(--aim-line);
+  /* Header/tabs bar: always ink navy, like the landing page's navbar. */
+  --md-primary-fg-color: #0b0f1a;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--aim-brand-hi);
+  --md-typeset-a-color: var(--aim-brand);
+  --md-code-bg-color: var(--aim-elev);
+  --md-code-fg-color: var(--aim-fg);
+}
+
+[data-md-color-scheme="slate"] {
+  --aim-bg: #0b0f1a;
+  --aim-surface: #0f141c;
+  --aim-elev: #141b28;
+  --aim-line: #1d2636;
+  --aim-line2: #2b3850;
+  --aim-fg: #f2f6fd;
+  --aim-muted: #9aa6bb;
+  --aim-faint: #64718a;
+  --aim-brand: #2f7cff;
+  --aim-brand-hi: #5b9bff;
+  --aim-brand-bg: #0e2350;
+  --aim-ok: #4ade80;
+  --aim-warn: #fbbf24;
+
+  --aim-card-bg: var(--aim-surface);
+  --aim-card-border: var(--aim-line);
+
+  --md-default-bg-color: var(--aim-bg);
+  --md-default-fg-color: var(--aim-fg);
+  --md-default-fg-color--light: var(--aim-muted);
+  --md-default-fg-color--lighter: var(--aim-faint);
+  --md-default-fg-color--lightest: var(--aim-line2);
+  --md-primary-fg-color: #0b0f1a;
+  --md-primary-bg-color: var(--aim-fg);
+  --md-accent-fg-color: var(--aim-brand-hi);
+  --md-typeset-a-color: var(--aim-brand-hi);
+  --md-code-bg-color: var(--aim-elev);
+  --md-code-fg-color: var(--aim-fg);
+}
+
+/* ---------- Hero ---------- */
+/* Navy in both schemes on purpose, matching the landing page hero: ink navy with a blue glow pulled from the
+   brand gradient (#0250BE → #02409A → #011C48), so it reads the same whichever mode the reader is in. */
+.aim-hero {
+  position: relative;
+  margin: 0 0 2.8rem;
+  padding: 3.5rem 2.5rem 3rem;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #101a30 0%, #0b1322 50%, #060a13 100%);
+  border: 1px solid #1c2942;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 24px 50px -30px rgba(1, 28, 72, 0.8);
+  overflow: hidden;
+}
+.aim-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(760px 300px at 86% -25%, rgba(47, 124, 255, 0.24), transparent 60%),
+    radial-gradient(520px 260px at 8% 110%, rgba(2, 64, 154, 0.28), transparent 65%);
+  pointer-events: none;
+}
+.aim-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(242, 246, 253, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 246, 253, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(620px 280px at 24% 0%, #000, transparent 78%);
+  pointer-events: none;
+}
+.aim-hero > * { position: relative; z-index: 1; }
+.aim-hero .aim-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #5b9bff; font-weight: 700; margin-bottom: 0.75rem;
+}
+.aim-hero h1 {
+  font-size: 2.4rem; line-height: 1.1; margin: 0 0 0.85rem; color: #ffffff;
+  font-weight: 800; letter-spacing: -0.02em;
+}
+/* The landing page's blue-highlight headline word. Gradient text with a solid-colour fallback. */
+.aim-hero h1 .grad {
+  color: #2f7cff;
+  background: linear-gradient(100deg, #7db1ff, #2f7cff);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.aim-hero p.lede {
+  font-size: 1.02rem; line-height: 1.6; max-width: 62ch; color: #a9b6cc; margin: 0 0 1.6rem;
+}
+.aim-hero .aim-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.aim-hero .aim-cta a {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.6rem 1.15rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+  text-decoration: none; transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.aim-hero .aim-cta a.primary {
+  background: #2f7cff;
+  color: #ffffff; box-shadow: 0 10px 22px -12px rgba(47, 124, 255, 0.65);
+}
+.aim-hero .aim-cta a.primary:hover { background: #4a8dff; }
+.aim-hero .aim-cta a.ghost {
+  background: rgba(242, 246, 253, 0.05); color: #f2f6fd; border: 1px solid rgba(91, 155, 255, 0.35);
+}
+.aim-hero .aim-cta a:hover { transform: translateY(-2px); }
+.aim-hero .aim-cta a.ghost:hover { background: rgba(47, 124, 255, 0.14); }
+
+.aim-stats {
+  display: flex; flex-wrap: wrap; gap: 2.2rem; margin-top: 2rem;
+  padding-top: 1.6rem; border-top: 1px solid rgba(91, 155, 255, 0.14);
+}
+.aim-stats .stat .n { font-size: 1.5rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em; }
+.aim-stats .stat .l { font-size: 0.72rem; color: #64718a; text-transform: uppercase; letter-spacing: 0.09em; margin-top: 0.2rem; }
+
+/* ---------- Header logo ---------- */
+/* The AethosHub mark, a touch larger than Material's 1.2rem default so it carries in the navy bar. */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg { height: 1.5rem; width: auto; }
+
+/* ---------- Section header ---------- */
+.aim-sec { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--md-accent-fg-color); font-weight: 700; }
+
+/* ---------- Filter chips ---------- */
+.aim-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0 1.2rem; }
+.aim-chip {
+  cursor: pointer; user-select: none;
+  padding: 0.34rem 0.8rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+  border: 1px solid var(--aim-card-border); background: var(--aim-card-bg); color: var(--aim-muted);
+  transition: all .12s ease;
+}
+.aim-chip:hover { border-color: var(--aim-brand); color: var(--aim-brand); }
+.aim-chip.active { background: var(--aim-brand); border-color: var(--aim-brand); color: #ffffff; }
+
+/* ---------- Module map ---------- */
+.aim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 0.9rem; }
+.aim-mod {
+  display: block; text-decoration: none !important; color: inherit;
+  background: var(--aim-card-bg); border: 1px solid var(--aim-card-border);
+  border-radius: 13px; padding: 1rem 1.05rem; transition: all .15s ease; position: relative; overflow: hidden;
+}
+.aim-mod::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--mod-accent, var(--aim-brand)); opacity: 0.85;
+}
+.aim-mod:hover { transform: translateY(-3px); border-color: var(--mod-accent, var(--aim-brand));
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+.aim-mod .top { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.45rem; }
+.aim-mod .name { font-weight: 800; font-size: 0.98rem; letter-spacing: -0.01em; white-space: nowrap; }
+.aim-mod .tag {
+  font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+  padding: 0.16rem 0.46rem; border-radius: 6px; color: #ffffff; background: var(--mod-accent, var(--aim-brand)); white-space: nowrap;
+}
+.aim-mod .tag.optin { background: var(--aim-warn); }
+.aim-mod .tag.planned { background: transparent; color: var(--aim-muted); border: 1px dashed var(--aim-card-border); }
+.aim-mod .desc { font-size: 0.82rem; color: var(--aim-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+.aim-mod .deps { font-size: 0.68rem; color: var(--aim-muted); font-family: var(--md-code-font-family, monospace); }
+.aim-mod .deps b { color: var(--aim-fg); font-weight: 700; }
+.aim-mod.hidden { display: none; }
+
+/* ---------- Lifecycle stepper ---------- */
+.aim-stepper { background: var(--aim-card-bg); border: 1px solid var(--aim-card-border); border-radius: 14px; padding: 1.1rem; }
+.aim-steps { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.aim-step {
+  flex: 1 1 auto; min-width: 92px; cursor: pointer; text-align: center;
+  padding: 0.6rem 0.4rem; border-radius: 10px; border: 1px solid var(--aim-card-border);
+  background: transparent; transition: all .12s ease; position: relative;
+}
+.aim-step .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%; font-size: 0.72rem; font-weight: 800;
+  background: var(--aim-elev); color: var(--aim-fg); margin-bottom: 0.3rem;
+}
+.aim-step .lbl { display: block; font-size: 0.74rem; font-weight: 600; color: var(--aim-muted); }
+.aim-step.active { border-color: var(--aim-brand); background: var(--aim-brand-bg); }
+.aim-step.active .num { background: var(--aim-brand); color: #ffffff; }
+.aim-step.active .lbl { color: var(--aim-fg); }
+.aim-step-body { padding: 0.4rem 0.2rem 0.2rem; }
+.aim-step-panel { display: none; animation: aim-fade .18s ease; }
+.aim-step-panel.active { display: block; }
+.aim-step-panel h4 { margin: 0 0 0.4rem; font-size: 1rem; }
+.aim-step-panel .who {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--aim-brand); margin-bottom: 0.3rem;
+}
+.aim-step-panel p { margin: 0.2rem 0; font-size: 0.88rem; }
+@keyframes aim-fade { from { opacity: 0; transform: translateY(4px);} to {opacity:1; transform:none;} }
+
+/* ---------- Gate badges ---------- */
+.gate-on  { color: var(--aim-ok); font-weight: 700; }
+.gate-off { color: var(--aim-warn); font-weight: 700; }
+.badge-prop {
+  font-family: var(--md-code-font-family, monospace); font-size: 0.78em;
+  background: var(--aim-brand-bg);
+  padding: 0.05rem 0.4rem; border-radius: 5px;
+}
+
+/* ---------- Callout band ---------- */
+.aim-band {
+  border-radius: 14px; padding: 1.3rem 1.5rem; margin: 1.5rem 0;
+  background: var(--aim-elev);
+  border: 1px solid var(--aim-card-border);
+  border-left: 3px solid var(--aim-brand);
+}
+.aim-band p:last-child { margin-bottom: 0; }
+
+/* tighten mermaid on wide diagrams */
+.mermaid { text-align: center; }
+
+/* ---------- Diagram pan/zoom ---------- */
+.aim-diagram { position: relative; text-align: center; }
+.aim-zoom-btn {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  border: 1px solid var(--aim-card-border); background: var(--aim-card-bg); color: var(--aim-muted);
+  border-radius: 8px; padding: 0.1rem 0.45rem; font-size: 0.95rem; line-height: 1.4; cursor: zoom-in;
+  opacity: 0; transition: opacity .12s ease, color .12s ease, border-color .12s ease;
+}
+.aim-diagram:hover .aim-zoom-btn, .aim-zoom-btn:focus { opacity: 0.9; }
+.aim-zoom-btn:hover { color: var(--aim-brand); border-color: var(--aim-brand); opacity: 1; }
+
+.aim-zoom-overlay { position: fixed; inset: 0; z-index: 10000; background: #0b0f1a; display: none; }
+.aim-zoom-overlay.open { display: block; }
+.aim-zoom-stage { position: absolute; inset: 0; overflow: hidden; cursor: grab; }
+.aim-zoom-stage.grabbing { cursor: grabbing; }
+.aim-zoom-stage svg {
+  position: absolute; top: 0; left: 0; transform-origin: 0 0;
+  max-width: none !important; max-height: none !important;
+}
+.aim-zoom-bar { position: absolute; top: 14px; right: 18px; z-index: 2; display: flex; gap: 0.4rem; }
+.aim-zoom-bar button {
+  width: 34px; height: 34px; border-radius: 9px; cursor: pointer; font-size: 1rem;
+  border: 1px solid rgba(250, 250, 249, 0.2); background: rgba(250, 250, 249, 0.08); color: #fafaf9;
+  transition: background .12s ease;
+}
+.aim-zoom-bar button:hover { background: rgba(250, 250, 249, 0.18); }
+.aim-zoom-hint {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 2;
+  color: #a6a6a0; font-size: 0.76rem; letter-spacing: 0.02em; background: rgba(0, 0, 0, 0.35);
+  padding: 0.25rem 0.7rem; border-radius: 999px; pointer-events: none;
+}

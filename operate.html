@@ -1,0 +1,1463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="concepts.html">
+      
+      
+        <link rel="next" href="govern.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Operate - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="operate.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual keys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issuing-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issuing a key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placement-rules-and-limits-the-hidden-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement rules and limits (the hidden parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalog-providers-deployments-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog (providers, deployments, and routing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog (providers, deployments, and routing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#providers-the-vendor-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers (the vendor connections)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployments-the-model-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployments (the model aliases)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-routing-works-the-hidden-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How routing works (the hidden engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playground
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rate limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-tabs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual keys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issuing-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issuing a key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placement-rules-and-limits-the-hidden-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement rules and limits (the hidden parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalog-providers-deployments-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog (providers, deployments, and routing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog (providers, deployments, and routing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#providers-the-vendor-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers (the vendor connections)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployments-the-model-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployments (the model aliases)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-routing-works-the-hidden-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How routing works (the hidden engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playground
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rate limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-tabs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="operate">Operate<a class="headerlink" href="#operate" title="Permanent link">&para;</a></h1>
+<p><em>The day-to-day screens: who can use the gateway, what models it offers, how it picks one, and how you cap usage. Everything here assumes the <a href="concepts.html">core concepts</a> (scopes, roles, keys).</em></p>
+<hr />
+<h2 id="organizations">Organizations<a class="headerlink" href="#organizations" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Organizations · <strong>Who:</strong> members view; <code>MANAGE_TEAMS</code> / <code>MANAGE_MEMBERS</code> to manage; <code>MANAGE_ORG</code> for org settings · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>The Organizations page is where you run your tenant: its teams, its people, and its invitations. It has three things going on:</p>
+<ul>
+<li><strong>Orgs and teams.</strong> Create and rename teams, archive them, or (platform admin, when empty) hard-delete. A member is locked to their own org; the platform admin picks which org to work in.</li>
+<li><strong>Members.</strong> See everyone in the org, change a person's role (only to a role below your own), and remove people. Roles are the ones in <a href="concepts.html#roles-and-capabilities">Roles and capabilities</a>.</li>
+<li><strong>Invitations.</strong> Invite someone by email. They get an accept-link that turns into a membership. This is how people join without you sharing credentials.</li>
+<li><strong>Team membership.</strong> Assign org members into a team and appoint a <strong>lead</strong>. The lead gets the delegated, team-scoped authority described in concepts.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Pick entities by name, never by ID</p>
+<p>Anywhere you select an org, team, or project, the dashboard uses a searchable picker that resolves names to IDs for you and lets you create one inline. You never type a UUID.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Deleting an org or team is a true purge</p>
+<p>A hard delete is allowed only when the scope is empty (no sub-entities, no active keys). It publishes a <code>ScopeDeleted</code> event that cascades a <strong>tenant purge</strong>: budgets, key caps and keys, guardrail rules, and the audit trail for that scope are erased. Prefer <strong>archive</strong> (reversible) unless you truly mean to erase. See org deletion.</p>
+</div>
+<hr />
+<h2 id="virtual-keys">Virtual keys<a class="headerlink" href="#virtual-keys" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Virtual keys · <strong>Who:</strong> <code>ISSUE_KEYS</code> (user and up) · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>A <strong>virtual key</strong> is the credential your application uses to call the gateway. It is what you hand to a service instead of a real vendor key. You never expose your OpenAI/Anthropic master keys to applications; those stay sealed in the <a href="#catalog-providers-deployments-and-routing">catalog</a>.</p>
+<h3 id="issuing-a-key">Issuing a key<a class="headerlink" href="#issuing-a-key" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click <strong>Issue key</strong>.</li>
+<li>Choose the <strong>placement</strong> (the scope the key belongs to): the org, and optionally a team and a project. This sets the key's scope chain, which decides which budgets and limits apply to it.</li>
+<li>Give it a label so you can recognise it later.</li>
+<li>Issue. <strong>The secret is shown once.</strong> Copy it now; only its hash is stored, so it cannot be shown again. The list afterward shows a non-secret hint (a prefix), the scope, and the status.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># What your application then does (the data plane):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>https://your-gateway/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer sk-...your-virtual-key...&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hello&quot;}]}&#39;</span>
+</span></code></pre></div>
+<h3 id="placement-rules-and-limits-the-hidden-parts">Placement rules and limits (the hidden parts)<a class="headerlink" href="#placement-rules-and-limits-the-hidden-parts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Placement authority.</strong> Putting a key directly at the org level (no team) draws on the org's shared pool, so it needs budget authority (<code>MANAGE_BUDGETS</code>, i.e. admin/owner) or the platform admin. A regular member without that must place the key in a <strong>team they belong to</strong>. This stops a member from minting org-level spend.</li>
+<li><strong>Per-scope key-count caps.</strong> There is an always-on ceiling on how many keys a scope may hold (default 1 000 000 - high enough that it never bites a real organization, so it acts as a runaway backstop rather than a budget), plus admin-set caps via the key-limits API, which are how you actually prevent key sprawl. Hitting either returns a clear <code>409</code>.</li>
+<li><strong>Visibility is scoped.</strong> A plain member sees only their teams' keys; an overseer with <code>VIEW_SECURITY</code> sees the whole org; the platform admin sees all. So the list you see is already filtered to what you are allowed to manage.</li>
+<li><strong>Revoking</strong> is immediate: the hash is marked revoked and the next request with that key is rejected. (SOAR can also <strong>quarantine</strong> a key, a reversible <code>SUSPENDED</code> state, see <a href="investigate.html#soar">SOAR</a>.)</li>
+</ul>
+<hr />
+<h2 id="catalog-providers-deployments-and-routing">Catalog (providers, deployments, and routing)<a class="headerlink" href="#catalog-providers-deployments-and-routing" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Catalog · <strong>Who:</strong> everyone views; <code>MANAGE_PROVIDERS</code> (admin/owner) for vendors + keys; <code>MANAGE_DEPLOYMENTS</code> (operator and up) for models + pricing · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>The catalog is your <strong>per-org</strong> map of "what models exist and where they come from." It has two layers, split by sensitivity on purpose.</p>
+<h3 id="providers-the-vendor-connections">Providers (the vendor connections)<a class="headerlink" href="#providers-the-vendor-connections" title="Permanent link">&para;</a></h3>
+<p>A <strong>provider</strong> is a connection to a vendor: a base URL, a protocol, and the <strong>master credential</strong> for that vendor. Because it holds a secret, creating or editing one needs <code>MANAGE_PROVIDERS</code>.</p>
+<ul>
+<li>The credential is <strong>AES-256-GCM encrypted at rest</strong>; the app refuses to start without its master key. Applications never see it.</li>
+<li>The <strong>protocol</strong> selects the outbound adapter: <code>openai</code> (passthrough, covers any OpenAI-compatible server including Ollama, Groq, vLLM, LiteLLM), <code>anthropic</code>, <code>gemini</code>, <code>vertex</code>, <code>vertex-anthropic</code>.</li>
+<li>Editing a provider supports <strong>key rotation</strong>: re-encrypt and swap the credential, effective on the next request (the catalog reads no cache).</li>
+<li>Deleting a provider cascades to its deployments.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Connecting a local Ollama</p>
+<p>Add a provider with protocol <code>openai</code>, base URL <code>http://ollama:11434/v1</code>, and any placeholder key (Ollama ignores it). Then add a deployment whose alias is what your apps will request and whose upstream model is the Ollama model name (e.g. <code>gemma3:4b</code>). No code change anywhere else.</p>
+</div>
+<h3 id="deployments-the-model-aliases">Deployments (the model aliases)<a class="headerlink" href="#deployments-the-model-aliases" title="Permanent link">&para;</a></h3>
+<p>A <strong>deployment</strong> maps a <strong>model alias</strong> (what your apps ask for) to a provider plus an <strong>upstream model</strong> (what the vendor runs), with optional <strong>pricing</strong>. Defining one needs <code>MANAGE_DEPLOYMENTS</code>.</p>
+<ul>
+<li><strong>Alias vs upstream.</strong> Your apps call the alias (<code>fast-cheap</code>); the deployment points it at, say, OpenAI's <code>gpt-4o-mini</code>. Re-point it later with zero app changes.</li>
+<li><strong>Pricing</strong> is per-token, in the org's base currency: input, output, and optionally cached-read and cache-write rates. If set, every call gets a computed <code>Money</code> cost that flows into budgets, the audit trail, and reports. No pricing means usage is still metered in tokens, just not in money.</li>
+<li><strong><code>drop_params</code></strong> lets you strip request params a particular upstream rejects.</li>
+<li><strong>Load balancing is implicit.</strong> Register <strong>two or more deployments under the same alias</strong> and the gateway automatically spreads requests across them and falls back between them. The catalog flags this as <strong>load-balanced ×N</strong> and offers a group-by-alias view.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Ceilings</p>
+<p>Registration is bounded by always-on caps (default 1 000 providers per org, 5 000 deployments per provider); a breach is a <code>409</code>.</p>
+</div>
+<h3 id="how-routing-works-the-hidden-engine">How routing works (the hidden engine)<a class="headerlink" href="#how-routing-works-the-hidden-engine" title="Permanent link">&para;</a></h3>
+<p>This is the part that is invisible in the UI but does the heavy lifting. When a request names an alias, here is exactly how a vendor gets chosen. <strong>Yes, it is both budget-aware and health-aware.</strong></p>
+<pre class="aim-diagram"><code>flowchart TD
+    REQ["Request for alias 'fast-cheap'"] --&gt; RES["catalog.resolve(alias, org)&lt;br/&gt;→ all deployments under the alias"]
+    RES --&gt; BUD{"Per-deployment budget filter&lt;br/&gt;(cost-aware)"}
+    BUD --&gt;|"drop any deployment whose&lt;br/&gt;own budget is exhausted"| HEALTH["Health partition&lt;br/&gt;(circuit breaker)"]
+    HEALTH --&gt; HE["Healthy candidates"]
+    HEALTH --&gt; CD["Cooling-down candidates"]
+    HE --&gt; LBH["Load-balance (random order)"]
+    CD --&gt; LBC["Load-balance (random order)"]
+    LBH --&gt; ORDER["Try healthy first…"]
+    LBC --&gt; ORDER2["…then cooling-down last&lt;br/&gt;(half-open probe)"]
+    ORDER --&gt; CALL["Call vendor"]
+    ORDER2 --&gt; CALL
+    CALL --&gt;|success| DONE["Return + record success"]
+    CALL --&gt;|"transient 5xx / dropped conn"| RETRY["Retry w/ backoff + jitter&lt;br/&gt;(streaming-safe)"]
+    RETRY --&gt; CALL
+    CALL --&gt;|"hard failure"| NEXT["Record failure → next candidate (fallback)"]
+    NEXT --&gt; CALL
+    CALL --&gt;|"every candidate over budget"| B429["429 Over budget"]</code></pre>
+<p>Step by step:</p>
+<ol>
+<li><strong>Resolve.</strong> The alias resolves to the org's list of candidate deployments. If none is registered, a configured fallback provider is used.</li>
+<li><strong>Budget-aware filtering (cost-aware failover).</strong> Before routing, the gateway drops any candidate whose <strong>own per-deployment budget</strong> is exhausted, in one batched read. So if you cap the expensive vendor and leave the cheap one open, traffic <strong>spills to the cheap one</strong> instead of being denied. The request is denied with a <code>429</code> only when <em>every</em> candidate is over budget. (Aggregate, all-deployment budgets are checked earlier, at the pre-call gate; see <a href="#budgets">Budgets</a>.)</li>
+<li><strong>Health-aware ordering (circuit breaker).</strong> A per-deployment circuit breaker tracks failures. After <strong>N consecutive failures</strong> a deployment enters a <strong>cooldown</strong> window; a success clears it. Candidates are partitioned into <strong>healthy</strong> and <strong>cooling-down</strong>.</li>
+<li><strong>Load balancing.</strong> Each group is shuffled by a stateless random load balancer, so traffic spreads evenly across equivalent backends.</li>
+<li><strong>Order and fall back.</strong> Healthy candidates are tried first; cooling-down ones are kept at the <strong>end</strong> of the list as <strong>half-open probes</strong> (still reachable, so a recovered backend rejoins automatically). The pipeline tries each in order until one succeeds, reporting every attempt's outcome back to the breaker.</li>
+<li><strong>Transient retries.</strong> Within a single attempt, transient failures (<code>502/503/504/529</code> and dropped connections) are retried with exponential backoff and jitter, in a streaming-safe way, before the attempt is counted as a failure.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tuning</p>
+<p>The breaker is configured with <code>aim.routing.health.failure-threshold</code> and <code>aim.routing.health.cooldown</code>. It is in-memory per instance. Full internals: routing.</p>
+</div>
+<p>The net effect: register two cheap backends and one premium one under an alias, price them, put a budget on the premium one, and the gateway will load-balance the cheap pair, fail over on errors, cool down a flaky backend, and spill off the premium one when its budget runs out, all without your application knowing.</p>
+<hr />
+<h2 id="playground">Playground<a class="headerlink" href="#playground" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Playground · <strong>Who:</strong> open to every role (the key you paste authorises the call) · <strong>Editions:</strong> all</p>
+</blockquote>
+<p>The Playground is a real chat client wired to the <strong>real gateway</strong>, so it exercises the full pipeline (auth, budgets, guardrails, routing) exactly as an application would. Use it to smoke-test a deployment, see guardrails act, or watch token usage.</p>
+<ol>
+<li><strong>Paste a virtual key.</strong> It is held in memory only; nothing is minted or proxied on your behalf.</li>
+<li>Pick the <strong>org</strong> (platform admin chooses; a member is locked to theirs), which scopes the model menu, then pick a <strong>model alias</strong>.</li>
+<li>Toggle the wire surface (<strong>OpenAI</strong> <code>/v1/chat/completions</code> or <strong>Anthropic</strong> <code>/v1/messages</code>) and optionally turn on the built-in demo tools.</li>
+<li>Chat. You get streaming markdown, reasoning/"thinking" blocks with a token count, copy / regenerate / edit / branch, attachments (images + text), a stop button, and a live token counter.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">It is governed like everything else</p>
+<p>Because the Playground calls <code>/v1/**</code> with your key, the call is rate-limited, budgeted, guardrailed, and audited. If a guardrail redacts the reply or a budget denies the call, you will see it here too. That is the point: it is a faithful test, not a bypass.</p>
+</div>
+<hr />
+<h2 id="budgets">Budgets<a class="headerlink" href="#budgets" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Budgets · <strong>Who:</strong> <code>VIEW_BUDGETS</code> to view; <code>MANAGE_BUDGETS</code> (admin/owner, or a team lead for a project in their team) to set · <strong>Editions:</strong> all</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 318" role="img" aria-label="Budgets page screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="38" font-size="17" font-weight="600" fill="#1B1B1A">Budgets</text>
+  <rect x="150" y="22" width="74" height="26" rx="8" fill="#EEEDFB"/><text x="187" y="39" font-size="12" font-weight="600" fill="#4F46E5" text-anchor="middle">Manage</text>
+  <text x="244" y="39" font-size="12" fill="#9D9D96">Explore</text>
+  <rect x="668" y="19" width="128" height="30" rx="8" fill="#4F46E5"/><text x="732" y="39" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">+ Add budget</text>
+  <!-- summary strip -->
+  <rect x="24" y="62" width="772" height="34" rx="9" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="84" font-size="12.5" fill="#1B1B1A"><tspan font-weight="600">6</tspan> budgets</text>
+  <text x="150" y="84" font-size="12.5" fill="#9A5B00"><tspan font-weight="600">1</tspan> near limit</text>
+  <text x="280" y="84" font-size="12.5" fill="#6B6B65"><tspan font-weight="600">0</tspan> over</text>
+  <text x="640" y="84" font-size="12.5" fill="#6B6B65">next reset in 9d</text>
+  <!-- card 1 -->
+  <rect x="24" y="106" width="772" height="86" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="132" font-size="13" font-weight="600" fill="#1B1B1A">Organization · all models · monthly</text>
+  <rect x="40" y="144" width="360" height="8" rx="4" fill="#F4F4F1"/><rect x="40" y="144" width="282" height="8" rx="4" fill="#9A5B00"/>
+  <text x="410" y="152" font-size="11.5" fill="#6B6B65">cost  $3,920 / $5,000</text>
+  <rect x="40" y="164" width="360" height="8" rx="4" fill="#F4F4F1"/><rect x="40" y="164" width="150" height="8" rx="4" fill="#15803D"/>
+  <text x="410" y="172" font-size="11.5" fill="#6B6B65">tokens  1.2M / 4M</text>
+  <!-- card 2 (per-deployment) -->
+  <rect x="24" y="202" width="772" height="92" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="228" font-size="13" font-weight="600" fill="#1B1B1A">chat · openai-premium · monthly</text>
+  <rect x="250" y="216" width="106" height="18" rx="9" fill="#EEEDFB"/><text x="303" y="229" font-size="10" fill="#4F46E5" text-anchor="middle">per-deployment</text>
+  <rect x="40" y="242" width="360" height="8" rx="4" fill="#F4F4F1"/><rect x="40" y="242" width="352" height="8" rx="4" fill="#B3261E"/>
+  <text x="410" y="250" font-size="11.5" fill="#6B6B65">cost  $985 / $1,000</text>
+  <text x="40" y="278" font-size="11" fill="#9D9D96">Exhausting this per-deployment cap fails over to the cheap backend, it does not deny the alias.</text>
+</svg>
+<figcaption><em>Budgets ▸ Manage. A scope's at-a-glance summary above live spend meters. The second card is a per-deployment cap (note the badge), the lever behind cost-aware failover.</em></figcaption>
+</figure>
+
+<p>Budgets cap spend, in <strong>tokens and/or money</strong>, over a reset period, at any scope. They are enforced pre-call on accumulated spend and accrued post-call from the event stream, so streaming is fine and the one request that crosses the line still completes.</p>
+<p>A budget is identified by four things, so a single scope can hold several at once:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Values</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scope</strong></td>
+<td>ORG / TEAM / PROJECT / KEY</td>
+<td>Where it attaches (and where it is enforced in the chain)</td>
+</tr>
+<tr>
+<td><strong>Model</strong></td>
+<td>all, or one alias</td>
+<td>Cap everything, or just one model</td>
+</tr>
+<tr>
+<td><strong>Provider</strong></td>
+<td>all, or one</td>
+<td>All deployments of the alias, or <strong>one specific deployment</strong> (for cost-aware failover)</td>
+</tr>
+<tr>
+<td><strong>Period</strong></td>
+<td>NONE / HOURLY / DAILY / WEEKLY / MONTHLY</td>
+<td>The reset window (lazy reset)</td>
+</tr>
+</tbody>
+</table>
+<p>Each budget sets a hard <code>tokenLimit</code> and/or <code>costLimit</code> (denies when exceeded) plus an optional <strong>soft</strong> cost limit (warns, but proceeds). So you can run "monthly $5k hard cap on everything, plus a daily $200 soft warning, plus an hourly burst cap on the expensive model" all on one scope.</p>
+<h3 id="the-two-tabs">The two tabs<a class="headerlink" href="#the-two-tabs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Manage</strong> (per scope). Pick an ORG/TEAM/PROJECT (platform admin picks the org; members locked to theirs). You get an at-a-glance summary (counts of budgets, near-limit, over, and the next reset) beside a paginated list of budget cards, each with live spend <strong>meters</strong> for cost and tokens against their soft and hard thresholds. Add an all-models, per-model, or <strong>per-deployment</strong> cap (a deployment picker appears for a load-balanced alias), edit, or delete.</li>
+<li><strong>Explore</strong> (cross-scope FinOps). A filterable table over every budget in the org with client-side <strong>burn-rate, projected end-of-period, and time-to-exhaust</strong>, a spend <strong>trend + 7-day forecast</strong> chart, and model <strong>leaderboards</strong> (most expensive, most efficient by actual $/Mtok, cheapest by catalog rate).</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Aggregate vs per-deployment, and why failover works</p>
+<p>A <strong>provider-less</strong> budget (all deployments of an alias, or all models) is an <strong>aggregate</strong> cap, checked at the pre-routing gate: if it is exhausted the whole alias is denied. A budget restricted to <strong>one provider</strong> is a <strong>per-deployment</strong> cap, checked by the per-candidate filter during routing: exhausting it makes the gateway <strong>fail over</strong> to a sibling deployment rather than deny. That distinction is what makes <a href="#how-routing-works-the-hidden-engine">cost-aware routing</a> work: cap the premium backend per-deployment, leave an aggregate headroom, and traffic spills to the cheap backend.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Where the trends come from</p>
+<p>Budget rows hold only the current window's spend. The trend, forecast, and leaderboards come from the <a href="govern.html#audit-usage">analytics usage API</a> (<code>/admin/usage/spend</code> and <code>/spend-series</code>), so they are full history, not just this window.</p>
+</div>
+<hr />
+<h2 id="rate-limits">Rate limits<a class="headerlink" href="#rate-limits" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Rate limits · <strong>Who:</strong> <code>MANAGE_GATEWAY</code> (operator and up) to set/remove; members view · <strong>Editions:</strong> all (Valkey-backed counters on Distributed)</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 286" role="img" aria-label="Rate limits page screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="38" font-size="17" font-weight="600" fill="#1B1B1A">Rate limits</text>
+  <rect x="168" y="22" width="62" height="26" rx="8" fill="#EEEDFB"/><text x="199" y="39" font-size="12" font-weight="600" fill="#4F46E5" text-anchor="middle">Limits</text>
+  <text x="248" y="39" font-size="12" fill="#9D9D96">Activity</text>
+  <text x="796" y="39" font-size="12" fill="#6B6B65" text-anchor="end">Scope: Data Science (team)</text>
+  <!-- SOAR throttle banner -->
+  <rect x="24" y="58" width="772" height="40" rx="9" fill="#FBF1DA"/>
+  <circle cx="44" cy="78" r="5" fill="#9A5B00"/>
+  <text x="58" y="82" font-size="12.5" fill="#9A5B00"><tspan font-weight="600">SOAR throttle active</tspan>  - the limiter is using the tighter of configured and throttle.</text>
+  <rect x="664" y="66" width="116" height="26" rx="8" fill="#FFFFFF" stroke="#DCDBD5"/><text x="722" y="83" font-size="12" font-weight="500" fill="#1B1B1A" text-anchor="middle">Stop throttle</text>
+  <!-- meters card -->
+  <rect x="24" y="110" width="772" height="156" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="140" font-size="13" font-weight="600" fill="#1B1B1A">Requests / min (RPM)</text>
+  <rect x="40" y="150" width="600" height="9" rx="4" fill="#F4F4F1"/><rect x="40" y="150" width="360" height="9" rx="4" fill="#15803D"/>
+  <text x="660" y="159" font-size="12" fill="#6B6B65">362 / 600</text>
+  <text x="40" y="194" font-size="13" font-weight="600" fill="#1B1B1A">Tokens / min (TPM)</text>
+  <rect x="40" y="204" width="600" height="9" rx="4" fill="#F4F4F1"/><rect x="40" y="204" width="510" height="9" rx="4" fill="#9A5B00"/>
+  <text x="660" y="213" font-size="12" fill="#6B6B65">170k / 200k</text>
+  <text x="40" y="244" font-size="11" fill="#9D9D96">Meters track the effective cap = min(configured, active throttle). Exceeding returns 429 + Retry-After.</text>
+</svg>
+<figcaption><em>Rate limits ▸ Limits, with a SOAR throttle live (the amber banner and its Stop throttle action). Meters read against the effective cap, not just the configured one.</em></figcaption>
+</figure>
+
+<p>Rate limits cap <strong>requests per minute (RPM)</strong> and <strong>tokens per minute (TPM)</strong> per scope, via a per-minute sliding window. Exceeding a limit returns <code>429</code> with a <code>Retry-After</code> header. Like budgets, a limit attaches to a scope and is enforced across the whole scope chain.</p>
+<ul>
+<li><strong>RPM</strong> admits-and-counts on the hot path. <strong>TPM</strong> is a pre-call read plus a post-call token accrual.</li>
+<li>Counters live behind a pluggable backend: <strong>in-JVM</strong> (single instance / dev, the default) or <strong>Valkey</strong> (the only one that scales an org-wide counter across instances, via atomic increments on TTL'd minute buckets). On the <a href="deployment.html">Distributed</a> tier, use Valkey.</li>
+<li>An unconfigured scope touches no counter store at all (the config is cached in memory), so rate limiting adds nothing to a call until you actually set a limit.</li>
+</ul>
+<h3 id="the-two-tabs_1">The two tabs<a class="headerlink" href="#the-two-tabs_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Limits.</strong> Pick a scope, see live <strong>RPM/TPM usage meters</strong> against the <em>effective</em> cap, and set / update / remove a limit. If a SOAR <code>throttle</code> is active on the scope, an amber <strong>"SOAR throttle active"</strong> banner appears (the limiter takes the tighter of the configured and the throttle cap), with a <strong>Stop throttle</strong> action to lift it early.</li>
+<li><strong>Activity.</strong> The scope's request density, with a <strong>view</strong> selector (Day / Week / Month) and a <strong>range</strong> selector (1m / 3m / 6m): Day is an hour-of-day bar, Week is a day-of-week × hour heatmap, Month is a calendar heatmap of calls per day. All UTC, scoped to the selected org/team/project.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Throttle is also a SOAR action</p>
+<p>The same per-scope throttle mechanism backs SOAR's automated <code>throttle</code> containment. You can apply one manually here (operator and up) to seed or exercise the banner, and lift it early. It auto-reverts on its own. See <a href="investigate.html#soar">SOAR</a>.</p>
+</div>
+<hr />
+<p>Next: <strong><a href="govern.html">Govern →</a></strong> (guardrails, notifications, audit &amp; usage, reports, sign-in activity), or back to the <a href="index.html#i-want-to-where-to-go">section map</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="concepts.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core concepts">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Core concepts
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="govern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Govern">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Govern
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1235 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="govern.html">
+      
+      
+        <link rel="next" href="account.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Investigate - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#investigate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Investigate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="investigate.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#siem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIEM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SIEM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-rules-and-sigma-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection rules and Sigma rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEBA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOAR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-soar-rule-can-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a SOAR rule can match
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#siem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIEM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SIEM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-rules-and-sigma-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection rules and Sigma rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UEBA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOAR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-soar-rule-can-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a SOAR rule can match
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="investigate">Investigate<a class="headerlink" href="#investigate" title="Permanent link">&para;</a></h1>
+<p><em>Security operations: search the event stream, spot abnormal behaviour, and automatically contain abuse. This whole group needs the </em><em>Pro</em><em> tier (OpenSearch); on Core the pages are dormant.</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">Why Pro</p>
+<p>The Investigate group reads the <strong>SIEM projection</strong>: every governance event normalised and indexed into OpenSearch for fast search and aggregation. OpenSearch is what makes free-text search, field facets, and large-window analytics practical, and it also becomes the audit system of record on this tier. Turn it on with <code>aim.siem.enabled</code> (the <code>standalone.pro.yml</code> overlay). Internals: SIEM.</p>
+</div>
+<hr />
+<h2 id="siem">SIEM<a class="headerlink" href="#siem" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Investigate ▸ SIEM · <strong>Who:</strong> <code>VIEW_SECURITY</code> to view; <code>MANAGE_GATEWAY</code> to manage rules · <strong>Editions:</strong> Pro</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 306" role="img" aria-label="SIEM Events tab screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="36" font-size="17" font-weight="600" fill="#1B1B1A">SIEM</text>
+  <rect x="120" y="20" width="60" height="26" rx="8" fill="#EEEDFB"/><text x="150" y="37" font-size="12" font-weight="600" fill="#4F46E5" text-anchor="middle">Events</text>
+  <text x="196" y="37" font-size="12" fill="#9D9D96">Detection rules</text>
+  <text x="314" y="37" font-size="12" fill="#9D9D96">Sigma rules</text>
+  <!-- search bar -->
+  <rect x="24" y="54" width="556" height="32" rx="9" fill="#FFFFFF" stroke="#DCDBD5"/>
+  <text x="38" y="74" font-size="11.5" fill="#6B6B65" font-family="monospace">category = guardrail.triggered AND action = BLOCK</text>
+  <rect x="592" y="54" width="44" height="32" rx="8" fill="#EEEDFB"/><text x="614" y="74" font-size="11" font-weight="600" fill="#4F46E5" text-anchor="middle">24h</text>
+  <text x="648" y="74" font-size="11" fill="#9D9D96">7d</text><text x="676" y="74" font-size="11" fill="#9D9D96">30d</text>
+  <rect x="704" y="54" width="92" height="32" rx="8" fill="#FFFFFF" stroke="#DCDBD5"/><text x="750" y="74" font-size="11" fill="#6B6B65" text-anchor="middle">custom range</text>
+  <!-- events-over-time area chart -->
+  <rect x="24" y="98" width="500" height="96" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="118" font-size="11.5" fill="#6B6B65">Events over time</text>
+  <path d="M40 178 L88 168 L136 172 L184 150 L232 158 L280 132 L328 140 L376 118 L424 134 L472 124 L508 138 L508 184 L40 184 Z" fill="#EEEDFB" stroke="#4F46E5" stroke-width="1.5"/>
+  <!-- group-by donut -->
+  <rect x="536" y="98" width="260" height="96" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="552" y="118" font-size="11.5" fill="#6B6B65">Group by: severity</text>
+  <circle cx="600" cy="156" r="26" fill="none" stroke="#B3261E" stroke-width="12" stroke-dasharray="25 138" transform="rotate(-90 600 156)"/>
+  <circle cx="600" cy="156" r="26" fill="none" stroke="#9A5B00" stroke-width="12" stroke-dasharray="41 122" stroke-dashoffset="-25" transform="rotate(-90 600 156)"/>
+  <circle cx="600" cy="156" r="26" fill="none" stroke="#1D4ED8" stroke-width="12" stroke-dasharray="57 106" stroke-dashoffset="-66" transform="rotate(-90 600 156)"/>
+  <circle cx="600" cy="156" r="26" fill="none" stroke="#15803D" stroke-width="12" stroke-dasharray="40 123" stroke-dashoffset="-123" transform="rotate(-90 600 156)"/>
+  <circle cx="660" cy="140" r="4" fill="#B3261E"/><text x="670" y="144" font-size="10.5" fill="#6B6B65">critical</text>
+  <circle cx="660" cy="158" r="4" fill="#9A5B00"/><text x="670" y="162" font-size="10.5" fill="#6B6B65">high</text>
+  <circle cx="660" cy="176" r="4" fill="#1D4ED8"/><text x="670" y="180" font-size="10.5" fill="#6B6B65">medium</text>
+  <!-- triage list -->
+  <rect x="24" y="206" width="772" height="84" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="40" y="228" font-size="11" fill="#9D9D96">TIME</text><text x="150" y="228" font-size="11" fill="#9D9D96">EVENT</text><text x="360" y="228" font-size="11" fill="#9D9D96">KEY</text><text x="560" y="228" font-size="11" fill="#9D9D96">OUTCOME</text>
+  <text x="40" y="252" font-size="11.5" fill="#6B6B65">12:41:08</text><text x="150" y="252" font-size="11.5" fill="#1B1B1A">guardrail.triggered</text><text x="360" y="252" font-size="11.5" fill="#6B6B65" font-family="monospace">sk-…a91</text><rect x="560" y="241" width="48" height="16" rx="6" fill="#FBEAE9"/><text x="584" y="253" font-size="10" fill="#B3261E" text-anchor="middle">BLOCK</text>
+  <text x="40" y="276" font-size="11.5" fill="#6B6B65">12:40:55</text><text x="150" y="276" font-size="11.5" fill="#1B1B1A">guardrail.triggered</text><text x="360" y="276" font-size="11.5" fill="#6B6B65" font-family="monospace">sk-…a91</text><rect x="560" y="265" width="48" height="16" rx="6" fill="#FBEAE9"/><text x="584" y="277" font-size="10" fill="#B3261E" text-anchor="middle">BLOCK</text>
+</svg>
+<figcaption><em>SIEM ▸ Events. A match-expression search and time range drive the over-time chart, a group-by visualization (here severity), and a triage list. The same query grammar powers detection rules, SOAR, and notification routing.</em></figcaption>
+</figure>
+
+<p>A query-agnostic explorer over the normalised event stream, in three tabs.</p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>search bar</strong> and a recursive <strong>query builder</strong> (the same <code>ALL</code> / <code>ANY</code> / <code>NONE</code> match editor used by detection rules; visual or raw JSON).</li>
+<li>An <strong>events-over-time</strong> histogram with 24h / 7d / 30d presets and a <strong>custom date range</strong>.</li>
+<li>Field <strong>facets</strong> and a chart that re-renders for any <strong>group-by</strong> (source / severity / event / model / org / action) × <strong>metric</strong> (count / spend / tokens / entities) × <strong>chart type</strong> (bar / line / donut).</li>
+<li>A <strong>per-request trace</strong> to drill into one request's events.</li>
+</ul>
+<h3 id="how-to-query">How to query<a class="headerlink" href="#how-to-query" title="Permanent link">&para;</a></h3>
+<p>You build a <strong>match expression</strong>: a tree of conditions combined with <code>ALL</code> (and), <code>ANY</code> (or), and <code>NONE</code> (not). Each leaf matches a field from the event catalogue (source, category, an attribute, outcome). The same grammar powers the SIEM search, detection rules, SOAR rules, and notification routing, so what you learn here transfers everywhere.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;category&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;guardrail.triggered&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attributes.action&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BLOCK&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;any&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attributes.category&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SECRET&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attributes.category&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PII&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">]}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>That reads: guardrail events that <strong>blocked</strong>, where the category was <strong>SECRET or PII</strong>.</p>
+<h3 id="detection-rules-and-sigma-rules">Detection rules and Sigma rules<a class="headerlink" href="#detection-rules-and-sigma-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Detection rules</strong> are per-tenant rules that watch the stream and fire when a match expression crosses a <strong>count threshold</strong> over a window. They compile to OpenSearch Alerting / Security Analytics.</li>
+<li><strong>Sigma rules</strong> let you bring standard Sigma detections; they compile to the same backend.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Detection rule: repeated blocked secrets from one key</p>
+<ul>
+<li><strong>Match:</strong> <code>category = guardrail.triggered</code> AND <code>action = BLOCK</code> AND <code>category = SECRET</code></li>
+<li><strong>Group by:</strong> the offending key</li>
+<li><strong>Threshold:</strong> count ≥ 5 within 10 minutes</li>
+<li><strong>Then:</strong> raise a <code>siem.detection</code> event (which you can route to a <a href="govern.html#notifications">notification</a> channel, or have <a href="#soar">SOAR</a> act on).</li>
+</ul>
+<p>This catches an application (or a leaked key) repeatedly trying to exfiltrate secrets, without alerting on a single stray match.</p>
+</div>
+<hr />
+<h2 id="ueba">UEBA<a class="headerlink" href="#ueba" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Investigate ▸ UEBA · <strong>Who:</strong> <code>VIEW_SECURITY</code> to view; <code>MANAGE_GATEWAY</code> to change · <strong>Editions:</strong> Pro</p>
+</blockquote>
+<p>User and Entity Behaviour Analytics learns a baseline of normal behaviour per entity and flags deviations. Two tabs:</p>
+<ul>
+<li><strong>Anomalies.</strong> The <code>ueba.anomaly</code> events: the profile that fired, the offending entity (a key or an IP), a grade, and the time.</li>
+<li>
+<p><strong>Sensitivity.</strong> A rail of detection profiles, each <strong>off by default</strong>:</p>
+<ul>
+<li><strong>Key risk</strong> (a virtual key behaving unlike its own history)</li>
+<li><strong>Source risk</strong> (an IP/source behaving abnormally)</li>
+<li><strong>Admin risk</strong> (admin-plane behaviour)</li>
+</ul>
+<p>Each profile has an on/off toggle and a <strong>grade-threshold</strong> slider, with a live "how many would fire" preview and an explanation of the signals it watches. Saving a profile provisions its detector at once.</p>
+</li>
+</ul>
+<p>How a profile turns events into an anomaly:</p>
+<pre class="aim-diagram"><code>flowchart LR
+    EV["Events for an entity&lt;br/&gt;(a key or an IP)"] --&gt; BASE["Baseline&lt;br/&gt;(its own normal, over a window)"]
+    BASE --&gt; SCORE["Score the deviation&lt;br/&gt;(volume, mix, timing, novelty)"]
+    SCORE --&gt; GRADE{"Grade ≥ your threshold?"}
+    GRADE --&gt;|no| QUIET["No alert"]
+    GRADE --&gt;|yes| ANOM["ueba.anomaly event&lt;br/&gt;(shown on Anomalies; routable to alerts / SOAR)"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Baselines take time</p>
+<p>UEBA compares against a learned baseline window, so it is most useful after it has seen normal traffic for a while. Start with profiles off, watch the preview, then enable at a threshold that does not drown you. Internals: SIEM / UEBA.</p>
+</div>
+<hr />
+<h2 id="soar">SOAR<a class="headerlink" href="#soar" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Where:</strong> Investigate ▸ SOAR · <strong>Who:</strong> <code>VIEW_SECURITY</code> to view rules; <code>MANAGE_GATEWAY</code> to edit rules; the Actions feed is platform-admin · <strong>Editions:</strong> all, including Core - containment needs no OpenSearch. Rules matching a <strong>finding</strong> (detection / correlation / anomaly) need Pro, because that is where those events come from.</p>
+</blockquote>
+<figure>
+<svg viewBox="0 0 820 262" role="img" aria-label="SOAR Rules tab screen map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <text x="24" y="36" font-size="17" font-weight="600" fill="#1B1B1A">SOAR</text>
+  <rect x="118" y="20" width="56" height="26" rx="8" fill="#EEEDFB"/><text x="146" y="37" font-size="12" font-weight="600" fill="#4F46E5" text-anchor="middle">Rules</text>
+  <text x="190" y="37" font-size="12" fill="#9D9D96">Actions</text>
+  <!-- rule rail -->
+  <rect x="24" y="56" width="220" height="184" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <rect x="34" y="68" width="200" height="30" rx="8" fill="#EEEDFB"/><text x="48" y="87" font-size="12" font-weight="600" fill="#4F46E5">Block-burst → quarantine</text>
+  <text x="48" y="121" font-size="12" fill="#6B6B65">PII spike → alert</text>
+  <text x="48" y="151" font-size="12" fill="#6B6B65">Token flood → throttle</text>
+  <!-- editor -->
+  <rect x="256" y="56" width="540" height="184" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="272" y="84" font-size="11" font-weight="700" letter-spacing="0.5" fill="#9D9D96">WHEN</text>
+  <rect x="272" y="92" width="508" height="30" rx="8" fill="#F4F4F1"/>
+  <text x="286" y="111" font-size="11.5" fill="#1B1B1A" font-family="monospace">category = guardrail.triggered AND action = BLOCK</text>
+  <text x="272" y="144" font-size="11.5" fill="#6B6B65">group by key  ·  count ≥ 10 in 5m  ·  cooldown 30m</text>
+  <text x="272" y="176" font-size="11" font-weight="700" letter-spacing="0.5" fill="#9D9D96">THEN</text>
+  <rect x="272" y="184" width="92" height="22" rx="7" fill="#FBEAE9"/><text x="318" y="199" font-size="11" font-weight="600" fill="#B3261E" text-anchor="middle">quarantine</text>
+  <text x="374" y="199" font-size="11.5" fill="#9D9D96">reversible - puts the key in SUSPENDED</text>
+  <text x="272" y="228" font-size="11" fill="#9D9D96">Fired 3 times in the last 7 days.</text>
+</svg>
+<figcaption><em>SOAR ▸ Rules. A WHEN (match + count-over-window) / THEN (reversible action) builder. Permanent revoke stays manual, so automation can never irrecoverably cut off a tenant.</em></figcaption>
+</figure>
+
+<p>SOAR is automated abuse <strong>containment</strong>: when a pattern fires over the event stream, it takes a <strong>reversible</strong> action. Two tabs:</p>
+<ul>
+<li><strong>Rules.</strong> Per-org rules in a rail-plus-editor: a <strong>match</strong> (source / category / attribute) plus a <strong>count-over-window</strong> (threshold / window / cooldown) plus an <strong>action</strong>. Actions are <code>alert</code>, <code>quarantine</code> (put the offending key into a reversible <code>SUSPENDED</code> state), and <code>throttle</code> (tighten the scope's rate limit temporarily). There is an <strong>apply recommended</strong> starter set.</li>
+<li><strong>Actions.</strong> The containment-action review (platform admin; the feed is global): filter by disposition, mark an action <code>CONFIRMED</code> or <code>FALSE_POSITIVE</code>, and <strong>un-suspend</strong> a quarantined key.</li>
+</ul>
+<h3 id="what-a-soar-rule-can-match">What a SOAR rule can match<a class="headerlink" href="#what-a-soar-rule-can-match" title="Permanent link">&para;</a></h3>
+<p>Two kinds of event, offered as chips under the match editor so you do not have to know the category names:</p>
+<ul>
+<li><strong>Observations</strong> — what happened. Guardrail hits, LLM calls, admin logins, config changes. Available on every tier.</li>
+<li><strong>Findings</strong> — what the platform concluded. A <strong>detection</strong>, a <strong>correlation</strong>, or a <strong>UEBA anomaly</strong>. These come from OpenSearch, so they need the Pro tier; a rule on one contains the subject the finding names.</li>
+</ul>
+<p>Matching a finding is how a detection becomes <em>action</em>, not just a line in a list: "when the <code>exfil-pattern</code> correlation fires for a key, quarantine it".</p>
+<p>You cannot write a rule on a <strong>response</strong> — SOAR's own containment actions — and they are not offered. SOAR would be reacting to itself, so such a rule could never fire; to be told when containment happens, route the <code>security.action</code> category on the <a href="govern.html#notifications">Notifications</a> page instead.</p>
+<div class="admonition info">
+<p class="admonition-title">Why a quarantine does not cascade</p>
+<p>A containment is recorded as an event like anything else, so it is fair to wonder whether one quarantine can trigger another. It cannot: the platform tracks what each event was <em>derived from</em> and refuses to feed its own conclusions back into detection. The event detail panel in SIEM ▸ Events shows this as <strong>Derived</strong> — which observation started the chain, and what directly caused the event you are looking at.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Reversible by design</p>
+<p>Automated actions are deliberately reversible: <code>quarantine</code> suspends a key (you can un-suspend it), and <code>throttle</code> auto-reverts. Permanent <code>revoke</code> stays <strong>manual</strong>, so an automated rule can never irrecoverably cut off a tenant. The throttle action surfaces on the <a href="operate.html#rate-limits">Rate limits</a> page as the amber banner. Internals: SOAR.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">SOAR rule: quarantine a key on a guardrail-block burst</p>
+<ul>
+<li><strong>Match:</strong> <code>category = guardrail.triggered</code> AND <code>action = BLOCK</code></li>
+<li><strong>Group by:</strong> the offending key · <strong>Threshold:</strong> ≥ 10 in 5 minutes · <strong>Cooldown:</strong> 30 minutes</li>
+<li><strong>Then:</strong> <code>quarantine</code> the key. The key goes <code>SUSPENDED</code>, a <code>SecurityActionTaken</code> event is recorded and routed to alerts, and an admin can review and un-suspend it from the Actions tab.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">SOAR rule: contain on a detection (Pro)</p>
+<ul>
+<li><strong>Match:</strong> <code>category = detection</code> AND <code>rule = secret-exfil-burst</code></li>
+<li><strong>Group by:</strong> the offending key · <strong>Threshold:</strong> ≥ 1 · <strong>Cooldown:</strong> 1 hour</li>
+<li><strong>Then:</strong> <code>quarantine</code>. The detection rule does the pattern work in OpenSearch; the SOAR rule turns its verdict into containment. Threshold 1 is reasonable here because the detection has already counted the burst — do not count it twice.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">How long each kind of event is kept</p>
+<p>Telemetry is voluminous and findings are not, so they age out separately: <strong>90 days</strong> of observations, <strong>a year</strong> of findings and containment records, by default. That means an investigation can still see <em>what was concluded</em> about a key long after the individual calls have gone. An org can shorten its own searchable window on Settings ▸ Retention; that setting governs telemetry, and findings keep the longer window.</p>
+</div>
+<hr />
+<p>Next: <strong><a href="account.html">Settings &amp; Profile →</a></strong>, or back to the <a href="index.html#i-want-to-where-to-go">section map</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="govern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Govern">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Govern
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="account.html" class="md-footer__link md-footer__link--next" aria-label="Next: Settings &amp; Profile">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Settings & Profile
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

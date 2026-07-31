@@ -1,0 +1,1607 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="concepts.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Install - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installing-agent-access-manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="install.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-localhost-will-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why localhost will not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-in-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install in one command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install in one command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-it-again-upgrades-in-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it again upgrades in place
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First run
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointing-an-application-at-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointing an application at it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-to-day-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day-to-day operation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Day-to-day operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-a-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying a license
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-over-without-reinstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting over without reinstalling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstalling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-gapped-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air-gapped installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-from-the-release-kit-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing from the release kit by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trying-an-unreleased-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trying an unreleased build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-local-model-is-refused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A local model is refused
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dashboard-shows-a-starting-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The dashboard shows a "starting" page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-resolves-at-the-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nothing resolves at the URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-in-redirects-to-the-wrong-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-in redirects to the wrong address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-installer-says-it-is-installing-from-somewhere-unexpected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The installer says it is installing from somewhere unexpected
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-localhost-will-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why localhost will not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-in-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install in one command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install in one command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-it-again-upgrades-in-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it again upgrades in place
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First run
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointing-an-application-at-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointing an application at it
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-to-day-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day-to-day operation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Day-to-day operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-a-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying a license
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-over-without-reinstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting over without reinstalling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstalling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-gapped-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air-gapped installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-from-the-release-kit-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing from the release kit by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trying-an-unreleased-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trying an unreleased build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-local-model-is-refused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A local model is refused
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dashboard-shows-a-starting-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The dashboard shows a "starting" page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-resolves-at-the-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nothing resolves at the URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-in-redirects-to-the-wrong-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-in redirects to the wrong address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-installer-says-it-is-installing-from-somewhere-unexpected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The installer says it is installing from somewhere unexpected
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installing-agent-access-manager">Installing Agent Access Manager<a class="headerlink" href="#installing-agent-access-manager" title="Permanent link">&para;</a></h1>
+<p>This page covers the <strong>standalone</strong> install: everything on one machine, which is how most deployments start and where every evaluation should. For multi-machine and Kubernetes, see <em>How it is deployed</em>.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p>You need three things:</p>
+<ul>
+<li><strong>Docker Engine with the Compose v2 plugin.</strong> Docker Desktop on Windows and macOS includes it. On Linux, <code>docker compose version</code> should print v2 or later.</li>
+<li><strong>About 4 GB of free memory.</strong> More if you enable the SIEM tier, which adds OpenSearch.</li>
+<li><strong>A hostname your users can reach.</strong> This one matters more than it looks - see below.</li>
+</ul>
+<h3 id="why-localhost-will-not-do">Why <code>localhost</code> will not do<a class="headerlink" href="#why-localhost-will-not-do" title="Permanent link">&para;</a></h3>
+<p>Agent Access Manager runs in containers. Inside a container, <code>localhost</code> means <em>that container</em>, not your machine. A public URL of <code>http://localhost:8080</code> would make the browser session, the SSO redirects, and the dashboard's own API calls point at the wrong place, so the installer rejects it outright.</p>
+<p>Use the machine's hostname (the default), a DNS name, or its IP address. The installer checks that the name actually resolves before accepting it.</p>
+<p>The same trap catches locally hosted models - see <em>A local model is refused</em> under Troubleshooting.</p>
+<h2 id="install-in-one-command">Install in one command<a class="headerlink" href="#install-in-one-command" title="Permanent link">&para;</a></h2>
+<p><strong>Linux and macOS</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://agentaccessmanager.com/get.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span></code></pre></div>
+<p><strong>Windows (PowerShell)</strong></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">agentaccessmanager</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+</span></code></pre></div>
+<p>That is the whole installation. It asks nothing on the happy path.</p>
+<h3 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Checks Docker is present and running, and tells you how to fix it if not.</li>
+<li>Reads the published version pointer to find the current release.</li>
+<li>Downloads the deploy kit and <strong>verifies its SHA-256 checksum</strong> before unpacking. A failed checksum aborts the install.</li>
+<li>Unpacks to <code>~/.aimanager</code> (Linux and macOS) or <code>%LOCALAPPDATA%\AIManager</code> (Windows).</li>
+<li>Picks a public URL: <code>http://&lt;this-machine-hostname&gt;:8080</code>, used only once the name is confirmed to resolve.</li>
+<li>Generates every secret - the admin password, the database password, the SSO admin, and the catalog master key - into <code>deploy/.env</code>.</li>
+<li>Pulls the container image and starts the stack.</li>
+<li><strong>Waits until the app is actually serving</strong>, printing progress. First boot migrates the database and imports the SSO realm, which takes a few minutes.</li>
+<li>Creates a desktop launcher, then prints the dashboard URL and your first-login credentials.</li>
+</ol>
+<p>Because of step 8, when it hands you a URL the dashboard is ready. If you open it earlier you may briefly see a "starting" page, which refreshes itself.</p>
+<h3 id="running-it-again-upgrades-in-place">Running it again upgrades in place<a class="headerlink" href="#running-it-again-upgrades-in-place" title="Permanent link">&para;</a></h3>
+<p>Re-run the same command to move to the current release. Your <code>deploy/.env</code> and all data volumes are kept, so secrets and history survive.</p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<p>A piped script cannot take parameters directly, so pass them through the pipe:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://agentaccessmanager.com/get.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--url<span class="w"> </span>https://gateway.acme.com
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&amp;</span> <span class="p">(</span><span class="no">[scriptblock]</span><span class="p">::</span><span class="n">Create</span><span class="p">((</span><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">agentaccessmanager</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span><span class="p">)))</span> <span class="n">-Url</span> <span class="n">https</span><span class="p">://</span><span class="n">gateway</span><span class="p">.</span><span class="n">acme</span><span class="p">.</span><span class="n">com</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Windows form</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--url URL</code></td>
+<td><code>-Url</code></td>
+<td>The address users reach the dashboard at. Sets the port too if the URL carries one.</td>
+</tr>
+<tr>
+<td><code>--port N</code></td>
+<td><code>-Port</code></td>
+<td>Listen on a different port. Default 8080.</td>
+</tr>
+<tr>
+<td><code>--version vX.Y.Z</code></td>
+<td><code>-Version</code></td>
+<td>Install a specific release instead of the latest.</td>
+</tr>
+<tr>
+<td><code>--image TAG</code></td>
+<td><code>-Image</code></td>
+<td>Use a specific image, for example one loaded from an air-gapped bundle.</td>
+</tr>
+<tr>
+<td><code>--license FILE</code></td>
+<td><code>-License</code></td>
+<td>Apply a license token during installation.</td>
+</tr>
+<tr>
+<td><code>--dir PATH</code></td>
+<td><code>-Dir</code></td>
+<td>Install somewhere other than the default directory.</td>
+</tr>
+<tr>
+<td><code>--channel NAME</code></td>
+<td><code>-Channel</code></td>
+<td>Install from a channel such as <code>preview</code> rather than the latest release.</td>
+</tr>
+<tr>
+<td><code>--no-open</code></td>
+<td><code>-NoOpen</code></td>
+<td>Do not open a browser at the end.</td>
+</tr>
+</tbody>
+</table>
+<p>Serving over HTTPS at a real name is a reverse-proxy concern: terminate TLS in front and pass an <code>https://</code> URL, and the installer marks its session cookies secure to match.</p>
+<h2 id="first-run">First run<a class="headerlink" href="#first-run" title="Permanent link">&para;</a></h2>
+<p>Open the dashboard and sign in with the credentials the installer printed. The setup wizard then walks you through four steps:</p>
+<ol>
+<li><strong>Create an organization</strong> - the tenant that owns keys, budgets, and policy.</li>
+<li><strong>Connect a provider</strong> - OpenAI, Anthropic, Gemini, or a local model server. Presets fill in the base URL for you.</li>
+<li><strong>Issue a virtual key</strong> - what your applications will authenticate with. Your vendor's own key never leaves the gateway.</li>
+<li><strong>Send a test message</strong> - in a chat panel on the page, so you can confirm the whole path works before wiring anything up.</li>
+</ol>
+<p>You will be asked to change the initial SSO password on first sign-in.</p>
+<h3 id="pointing-an-application-at-it">Pointing an application at it<a class="headerlink" href="#pointing-an-application-at-it" title="Permanent link">&para;</a></h3>
+<p>Your gateway speaks the OpenAI API, so most clients need only a base URL and a key:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>http://&lt;your-host&gt;:8080/v1/chat/completions<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;your-virtual-key&gt;&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;&lt;your-alias&gt;&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hello&quot;}]}&#39;</span>
+</span></code></pre></div>
+<p>The same base URL also serves <code>/v1/messages</code> (Anthropic), <code>/v1/responses</code>, <code>/v1/embeddings</code>, and <code>GET /v1/models</code>.</p>
+<h2 id="day-to-day-operation">Day-to-day operation<a class="headerlink" href="#day-to-day-operation" title="Permanent link">&para;</a></h2>
+<p>Run these from your install directory. On Windows use <code>.\aimanager.ps1</code> with the same subcommands.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./aimanager.sh<span class="w"> </span>status
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./aimanager.sh<span class="w"> </span>logs
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./aimanager.sh<span class="w"> </span>restart
+</span></code></pre></div>
+<p><code>stop</code> and <code>start</code> are there too, and a desktop launcher does the same thing if you prefer clicking.</p>
+<h3 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./aimanager.sh<span class="w"> </span>backup
+</span></code></pre></div>
+<p>This takes a consistent copy of every data volume <strong>plus</strong> <code>deploy/.env</code>. Keep them together: a backup cannot be restored without its <code>.env</code>, because the catalog master key in that file is what decrypts your stored provider credentials.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./aimanager.sh<span class="w"> </span>restore<span class="w"> </span>&lt;DIR&gt;
+</span></code></pre></div>
+<p>Restoring replaces current data, so it will ask for confirmation.</p>
+<div class="admonition warning">
+<p class="admonition-title">The master key must not change</p>
+<p><code>AIM_CATALOG_MASTER_KEY</code> in <code>deploy/.env</code> encrypts your provider API keys at rest. If you lose it or change it, those stored credentials cannot be decrypted and must be re-entered. Back that file up somewhere safe, and treat it as a secret.</p>
+</div>
+<h3 id="applying-a-license">Applying a license<a class="headerlink" href="#applying-a-license" title="Permanent link">&para;</a></h3>
+<p>The free CORE tier needs no license.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>./aimanager.sh<span class="w"> </span>license<span class="w"> </span>&lt;file-or-token&gt;
+</span></code></pre></div>
+<p>It takes effect immediately, with no restart. If the license unlocks features needing extra infrastructure - OpenSearch for the SIEM tier - bring it up with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./aimanager.sh<span class="w"> </span>upgrade
+</span></code></pre></div>
+<h3 id="starting-over-without-reinstalling">Starting over without reinstalling<a class="headerlink" href="#starting-over-without-reinstalling" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./aimanager.sh<span class="w"> </span>reset
+</span></code></pre></div>
+<p>Wipes the application's data and returns you to the setup wizard, keeping your secrets and SSO users. Useful after an evaluation.</p>
+<h2 id="uninstalling">Uninstalling<a class="headerlink" href="#uninstalling" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./aimanager.sh<span class="w"> </span>uninstall
+</span></code></pre></div>
+<p>Removes the containers and the data volumes, removes the desktop launcher, then asks whether to delete the install directory as well. That last part is a separate question because the directory holds <code>deploy/.env</code> and therefore your master key.</p>
+<p>To skip the question in a script, add <code>--purge</code> to delete the directory too, or <code>--yes</code> on its own to keep it.</p>
+<h2 id="air-gapped-installation">Air-gapped installation<a class="headerlink" href="#air-gapped-installation" title="Permanent link">&para;</a></h2>
+<p>When a release has <code>images-*.tar.zst</code> bundles attached, load them on the target machine first and the installer will not need registry access.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>zstd<span class="w"> </span>-d<span class="w"> </span>&lt;<span class="w"> </span>images-base-&lt;version&gt;.tar.zst<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>load
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>zstd<span class="w"> </span>-d<span class="w"> </span>&lt;<span class="w"> </span>images-pro-&lt;version&gt;.tar.zst<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>load
+</span></code></pre></div>
+<p>The second is only needed for the SIEM tier. You can also produce a bundle from a machine that <em>does</em> have access:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./aimanager.sh<span class="w"> </span>bundle
+</span></code></pre></div>
+<p>Then, on the air-gapped machine:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>./aimanager.sh<span class="w"> </span>load<span class="w"> </span>&lt;FILE&gt;
+</span></code></pre></div>
+<h2 id="installing-from-the-release-kit-by-hand">Installing from the release kit by hand<a class="headerlink" href="#installing-from-the-release-kit-by-hand" title="Permanent link">&para;</a></h2>
+<p>If you would rather not pipe a script, download the kit from the release page and run the installer yourself.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>tar<span class="w"> </span>xzf<span class="w"> </span>aimanager-&lt;version&gt;-deploy.tar.gz
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>aimanager
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>./install.sh<span class="w"> </span>--url<span class="w"> </span>http://&lt;your-host&gt;:8080
+</span></code></pre></div>
+<p>Add <code>--yes</code> to accept every default without prompting, which is what you want in a provisioning script.</p>
+<h2 id="trying-an-unreleased-build">Trying an unreleased build<a class="headerlink" href="#trying-an-unreleased-build" title="Permanent link">&para;</a></h2>
+<p>Preview builds exist to test a change before it ships. They are not supported, and the user guide is omitted from preview images, so <code>/guide</code> will not be there.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://agentaccessmanager.com/preview/get.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span></code></pre></div>
+<p>A preview uses the same default directory and port as a real install, so it will take over an existing one on that machine. Pass <code>--dir</code> and <code>--port</code> to keep them apart.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="a-local-model-is-refused">A local model is refused<a class="headerlink" href="#a-local-model-is-refused" title="Permanent link">&para;</a></h3>
+<p>You register Ollama, vLLM, or LM Studio and every call fails with a connection refused.</p>
+<p>The gateway runs in a container, so <code>localhost</code> there is the container itself, not your machine. Register a host-local model server as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>http://host.docker.internal:11434/v1
+</span></code></pre></div>
+<p>On Linux, also make the model server listen beyond loopback - for Ollama, set <code>OLLAMA_HOST=0.0.0.0</code>. Docker Desktop needs no such change.</p>
+<p>The dashboard warns you about this as you type a <code>localhost</code> address, and offers to correct it.</p>
+<h3 id="the-dashboard-shows-a-starting-page">The dashboard shows a "starting" page<a class="headerlink" href="#the-dashboard-shows-a-starting-page" title="Permanent link">&para;</a></h3>
+<p>That page is served while the application boots, and it refreshes itself. First boot runs database migrations and imports the SSO realm, so a few minutes is normal. If it lasts longer, check <code>./aimanager.sh logs</code>.</p>
+<h3 id="nothing-resolves-at-the-url">Nothing resolves at the URL<a class="headerlink" href="#nothing-resolves-at-the-url" title="Permanent link">&para;</a></h3>
+<p>The hostname has to resolve from the <em>machines that will use it</em>, not only from the server. Re-run the installer with <code>--url</code> pointing at a name your users can reach, or use the host's IP address.</p>
+<h3 id="sign-in-redirects-to-the-wrong-address">Sign-in redirects to the wrong address<a class="headerlink" href="#sign-in-redirects-to-the-wrong-address" title="Permanent link">&para;</a></h3>
+<p>SSO redirect URIs are pinned to the public URL chosen at install time. If the address changed, re-run the installer with the correct <code>--url</code> to re-render the realm.</p>
+<h3 id="the-installer-says-it-is-installing-from-somewhere-unexpected">The installer says it is installing from somewhere unexpected<a class="headerlink" href="#the-installer-says-it-is-installing-from-somewhere-unexpected" title="Permanent link">&para;</a></h3>
+<p>If it reports <code>installing from AIM_SITE=...</code>, an environment variable is redirecting it - most often left over from installing a preview in the same terminal. Clear it and try again:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">$env:AIM_SITE</span> <span class="p">=</span> <span class="nv">$null</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">unset</span><span class="w"> </span>AIM_SITE
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome &amp; editions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Welcome & editions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="concepts.html" class="md-footer__link md-footer__link--next" aria-label="Next: Core concepts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Core concepts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
