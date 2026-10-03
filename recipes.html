@@ -1,0 +1,1136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="deployment.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Recipes & walkthroughs - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recipes-walkthroughs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Recipes & walkthroughs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="recipes.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-onboard-a-new-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Onboard a new tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-connect-your-first-models-a-vendor-and-a-local-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Connect your first models (a vendor and a local one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cost-aware-failover-cap-the-premium-vendor-spill-to-the-cheap-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cost-aware failover (cap the premium vendor, spill to the cheap one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stop-pii-and-secrets-leaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stop PII and secrets leaking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cap-a-teams-spend-and-throttle-a-noisy-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cap a team's spend and throttle a noisy project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ship-a-weekly-cost-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ship a weekly cost report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-detect-and-auto-contain-a-leaked-key-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Detect and auto-contain a leaked key (Pro)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-grow-from-one-box-to-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Grow from one box to a cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-onboard-a-new-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Onboard a new tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-connect-your-first-models-a-vendor-and-a-local-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Connect your first models (a vendor and a local one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cost-aware-failover-cap-the-premium-vendor-spill-to-the-cheap-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cost-aware failover (cap the premium vendor, spill to the cheap one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stop-pii-and-secrets-leaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stop PII and secrets leaking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cap-a-teams-spend-and-throttle-a-noisy-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cap a team's spend and throttle a noisy project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ship-a-weekly-cost-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ship a weekly cost report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-detect-and-auto-contain-a-leaked-key-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Detect and auto-contain a leaked key (Pro)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-grow-from-one-box-to-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Grow from one box to a cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="recipes-walkthroughs">Recipes &amp; walkthroughs<a class="headerlink" href="#recipes-walkthroughs" title="Permanent link">&para;</a></h1>
+<p><em>End-to-end tasks, start to finish. Each recipe states the goal, what you need, the exact steps (with nav paths and the API where it helps), and how to verify it worked. They assume the <a href="concepts.html">core concepts</a>.</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Conventions</p>
+<p>Nav paths look like <strong>Operate ▸ Catalog</strong>. API calls are the same endpoints the screens use, so you can script any of this. Where a step needs a role or tier, it says so.</p>
+</div>
+<hr />
+<h2 id="1-onboard-a-new-tenant">1. Onboard a new tenant<a class="headerlink" href="#1-onboard-a-new-tenant" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> stand up an organization with a team, a teammate, and a working key.
+<strong>You need:</strong> platform admin (to create the org) or a fresh account (to self-onboard); <code>MANAGE_TEAMS</code> / <code>MANAGE_MEMBERS</code> after.</p>
+<ol>
+<li><strong>Create or join the org.</strong> A brand-new account with no org lands on <strong>Welcome</strong>: create an org (pick its <strong>base currency</strong> now, it is permanent) or accept an invite. A platform admin can also create orgs from <strong>Operate ▸ Organizations</strong>.</li>
+<li><strong>Make a team.</strong> Operate ▸ Organizations ▸ <em>Teams</em> → <strong>New team</strong> (e.g. "Platform"). Optionally appoint a <strong>lead</strong>.</li>
+<li><strong>Invite a teammate.</strong> Organizations ▸ <em>Members</em> → <strong>Invite</strong> by email, choosing a role at or below your own. They get an accept-link that becomes a membership.</li>
+<li><strong>Issue a key for an app.</strong> Operate ▸ Virtual keys ▸ <strong>Issue key</strong>, place it in the team (a teamless org-level key needs budget authority), label it, and <strong>copy the secret now</strong> (shown once).</li>
+</ol>
+<p><strong>Verify:</strong> paste the key into <strong>Operate ▸ Playground</strong>, pick a model, and send a message. A reply means auth, scope, and routing all work end to end.</p>
+<p><strong>Why it works:</strong> the key carries its <a href="concepts.html#scopes-and-the-scope-chain">scope chain</a> from the moment it is issued, so every later control (budgets, limits, guardrails) already knows where it belongs.</p>
+<hr />
+<h2 id="2-connect-your-first-models-a-vendor-and-a-local-one">2. Connect your first models (a vendor and a local one)<a class="headerlink" href="#2-connect-your-first-models-a-vendor-and-a-local-one" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> offer one alias backed by OpenAI and another backed by a local Ollama.
+<strong>You need:</strong> <code>MANAGE_PROVIDERS</code> (vendor + key), <code>MANAGE_DEPLOYMENTS</code> (alias + pricing).</p>
+<ol>
+<li><strong>Add the vendor provider.</strong> Operate ▸ Catalog ▸ <strong>Add provider</strong>: protocol <code>openai</code>, the OpenAI base URL, and your <strong>master key</strong> (encrypted at rest, never seen by apps).</li>
+<li><strong>Add a deployment.</strong> <strong>Add deployment</strong>: alias <code>gpt-4o-mini</code>, provider = the one above, upstream model <code>gpt-4o-mini</code>. Set <strong>pricing</strong> (input/output per token) so calls get a money cost.</li>
+<li><strong>Add the local provider.</strong> <strong>Add provider</strong>: protocol <code>openai</code>, base URL <code>http://ollama:11434/v1</code>, any placeholder key.</li>
+<li><strong>Add its deployment.</strong> alias <code>local-llama</code>, upstream model <code>gemma3:4b</code> (or whatever Ollama serves). Leave pricing empty (local inference is free); usage still meters in tokens.</li>
+</ol>
+<p><strong>Verify:</strong> in the Playground, switch between <code>gpt-4o-mini</code> and <code>local-llama</code> and confirm both reply. The same app code calls either by changing only the <code>model</code> field.</p>
+<p><strong>Why it works:</strong> the <a href="concepts.html#one-endpoint-many-vendors">canonical OpenAI shape</a> means your app never changes; only the catalog does.</p>
+<hr />
+<h2 id="3-cost-aware-failover-cap-the-premium-vendor-spill-to-the-cheap-one">3. Cost-aware failover (cap the premium vendor, spill to the cheap one)<a class="headerlink" href="#3-cost-aware-failover-cap-the-premium-vendor-spill-to-the-cheap-one" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> one alias served by a premium and a cheap backend, where traffic moves to the cheap one once the premium's budget is spent.
+<strong>You need:</strong> <code>MANAGE_DEPLOYMENTS</code> and <code>MANAGE_BUDGETS</code>.</p>
+<ol>
+<li><strong>Two deployments, one alias.</strong> Under alias <code>chat</code>, add deployment A (provider <code>openai-premium</code>, priced high) and deployment B (provider <code>local-or-cheap</code>, priced low or free). The catalog now shows <code>chat</code> as <strong>load-balanced ×2</strong>.</li>
+<li><strong>Cap the premium backend per-deployment.</strong> Operate ▸ Budgets ▸ <em>Manage</em> → add a budget on the scope, <strong>model</strong> = <code>chat</code>, <strong>provider</strong> = <code>openai-premium</code> (this restricts it to that one deployment), a monthly <strong>cost</strong> limit, period MONTHLY.</li>
+<li><strong>Leave aggregate headroom.</strong> Do not put a provider-less <code>chat</code> budget so low that it blocks the alias outright (that aggregate cap is checked before routing and would deny rather than fail over).</li>
+</ol>
+<p><strong>Verify:</strong> drive traffic until the premium budget is exhausted (or set it tiny), then watch new calls land on the cheap backend in <strong>Govern ▸ Audit &amp; usage</strong> (the served provider is recorded per call).</p>
+<p><strong>Why it works:</strong> a <strong>per-deployment</strong> budget is applied by the per-candidate filter during <a href="operate.html#how-routing-works-the-hidden-engine">routing</a>, so an exhausted backend is dropped from the candidate list and the request fails over instead of being denied. A <code>429</code> only happens when <em>every</em> candidate is over budget. See <a href="operate.html#budgets">aggregate vs per-deployment</a>.</p>
+<hr />
+<h2 id="4-stop-pii-and-secrets-leaking">4. Stop PII and secrets leaking<a class="headerlink" href="#4-stop-pii-and-secrets-leaking" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> redact emails in prompts and block API keys in replies.
+<strong>You need:</strong> <code>MANAGE_GATEWAY</code>. Regex detectors work on all editions; semantic PII needs <strong>Pro AI</strong>.</p>
+<ol>
+<li><strong>Seed a starter set.</strong> Govern ▸ Guardrails. On a fresh org, click <strong>apply recommended</strong> to plant PII/secret categories, detectors, and policies.</li>
+<li><strong>Tune the request policy.</strong> <em>Policies</em> tab → category <code>PII</code> → set the <strong>Request</strong> action to <code>REDACT</code> with a reversible <code>TOKEN</code> strategy (so the model still gets coherent text, restored for the client at the end).</li>
+<li><strong>Tune the response policy.</strong> category <code>SECRET</code> → set the <strong>Response</strong> action to <code>BLOCK</code>, fail-closed <strong>on</strong> (if the detector cannot finish, block rather than risk a leak).</li>
+<li><strong>Dry-run it.</strong> <em>Test</em> tab → type a prompt containing an email, watch it get redacted on the way in; edit the hypothetical model reply to include a fake API key and re-screen to see it blocked on the way out. No model is called.</li>
+</ol>
+<p><strong>Verify:</strong> repeat in the <strong>Playground</strong> against a real model to see it act on a live call (the Playground is fully governed).</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not redact tool calls</p>
+<p>If your apps use tool/function calling, keep tool-call content on <code>FLAG</code>/<code>BLOCK</code>, never <code>REDACT</code>. Mutating tool-call arguments breaks the tool. See <a href="govern.html#guardrails">guardrails</a>.</p>
+</div>
+<hr />
+<h2 id="5-cap-a-teams-spend-and-throttle-a-noisy-project">5. Cap a team's spend and throttle a noisy project<a class="headerlink" href="#5-cap-a-teams-spend-and-throttle-a-noisy-project" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> a hard monthly dollar cap on a team, plus a per-minute request cap on one project.
+<strong>You need:</strong> <code>MANAGE_BUDGETS</code> (budget), <code>MANAGE_GATEWAY</code> (rate limit).</p>
+<ol>
+<li><strong>Team budget.</strong> Operate ▸ Budgets ▸ <em>Manage</em> → pick the TEAM scope → add an all-models, MONTHLY <strong>cost</strong> limit (hard), plus an optional <strong>soft</strong> limit that warns earlier.</li>
+<li><strong>Project rate limit.</strong> Operate ▸ Rate limits → pick the PROJECT scope → set <strong>RPM</strong> (and/or <strong>TPM</strong>).</li>
+</ol>
+<p><strong>Verify:</strong> the Budgets <em>Manage</em> meters show live spend against the cap; the Rate limits <em>Limits</em> meters show RPM/TPM against the effective cap. Exceeding RPM returns <code>429</code> with <code>Retry-After</code>.</p>
+<p><strong>Why it works:</strong> both are enforced across the <a href="concepts.html#scopes-and-the-scope-chain">whole scope chain</a> at once, so the team cap and project limit apply on top of anything set at the org or key level. The tightest wins.</p>
+<hr />
+<h2 id="6-ship-a-weekly-cost-report">6. Ship a weekly cost report<a class="headerlink" href="#6-ship-a-weekly-cost-report" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> a branded PDF cost summary, emailed every Monday, password-protected.
+<strong>You need:</strong> <code>MANAGE_REPORTS</code> (operator and up); an SMTP server for email delivery.</p>
+<ol>
+<li><strong>Mail server (once).</strong> Settings ▸ Mail server → set host/port/credentials/from, <strong>send-test</strong> to confirm.</li>
+<li><strong>New report.</strong> Govern ▸ Reports ▸ <strong>New report</strong>: dataset = spend by model, scope = your org, window = last 7 days with period-over-period deltas, format = <strong>PDF</strong>.</li>
+<li><strong>Schedule + deliver.</strong> every Monday 08:00, deliver to a notification channel or a secure link.</li>
+<li><strong>Password (optional).</strong> set one so the emailed PDF needs it to open (native PDF password; the stored artifact is always encrypted at rest regardless).</li>
+<li><strong>Run now.</strong> the card shows "Generating…" then "Last generated …" with a <strong>Download</strong>.</li>
+</ol>
+<p><strong>Verify:</strong> download the PDF, confirm the branding, the KPIs, and (if set) the password prompt.</p>
+<p><strong>Why it works:</strong> reports read the same <a href="concepts.html#everything-is-an-event">usage event stream</a> as the dashboard, render via the object store with a TTL, and stream through the gated download. See <a href="govern.html#reports">reports</a>.</p>
+<hr />
+<h2 id="7-detect-and-auto-contain-a-leaked-key-pro">7. Detect and auto-contain a leaked key (Pro)<a class="headerlink" href="#7-detect-and-auto-contain-a-leaked-key-pro" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> when one key repeatedly trips secret-guardrails, alert and quarantine it automatically.
+<strong>You need:</strong> <strong>Pro</strong> (OpenSearch on), <code>VIEW_SECURITY</code> + <code>MANAGE_GATEWAY</code>.</p>
+<ol>
+<li><strong>Write a detection rule.</strong> Investigate ▸ SIEM ▸ <em>Detection rules</em>: match <code>category = guardrail.triggered</code> AND <code>action = BLOCK</code> AND <code>category = SECRET</code>, group by key, threshold ≥ 5 in 10 minutes.</li>
+<li><strong>Route an alert.</strong> Govern ▸ Notifications ▸ <em>Routing</em>: send <code>siem.detection</code> events to an email or webhook channel.</li>
+<li><strong>Add a SOAR rule.</strong> Investigate ▸ SOAR ▸ <em>Rules</em>: same match, group by key, threshold ≥ 10 in 5 minutes, cooldown 30 minutes, action <strong>quarantine</strong>.</li>
+<li><strong>Review.</strong> SOAR ▸ <em>Actions</em> (platform admin): when it fires, the key goes <code>SUSPENDED</code>; mark the action <code>CONFIRMED</code> or <strong>un-suspend</strong> if it was a false positive.</li>
+</ol>
+<p><strong>Verify:</strong> drive blocked-secret calls from one key (the <a href="govern.html#guardrails">guardrails Test</a> plus the Playground) and watch the detection fire, the alert arrive, and the key get quarantined.</p>
+<p><strong>Why it works:</strong> SOAR consumes the normalized event stream and takes <strong>reversible</strong> actions (quarantine/throttle); permanent revoke stays manual. See <a href="investigate.html#soar">SOAR</a>.</p>
+<hr />
+<h2 id="8-grow-from-one-box-to-a-cluster">8. Grow from one box to a cluster<a class="headerlink" href="#8-grow-from-one-box-to-a-cluster" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> move from a single standalone instance to multiple replicas without losing data or relearning the UI.
+<strong>You need:</strong> infra access; the same image.</p>
+<ol>
+<li><strong>Externalize the object store.</strong> Switch <code>aim.objectstore.backend</code> to <code>s3</code> and point it at an S3-compatible store, so every replica can serve a report download.</li>
+<li><strong>Move rate-limit counters to Valkey.</strong> Set <code>aim.ratelimit.backend=valkey</code> and <code>aim.cluster.backend=valkey</code> so counters and config-broadcasts are shared across replicas.</li>
+<li><strong>Run replicas behind an LB.</strong> Use <code>deploy/compose/distributed.yml</code> (single host, <code>--scale app=N</code>) or the Helm chart (multi-machine).</li>
+<li><strong>(Already handled)</strong> scheduled maintenance becomes a cluster singleton via ShedLock automatically.</li>
+</ol>
+<p><strong>Verify:</strong> issue a report on one replica and download it from another; hammer RPM and confirm the cap holds across replicas (not N times the cap).</p>
+<p><strong>Why it works:</strong> the data plane is stateless by design, so only shared state (counters, artifacts, the SIEM projection) moves to external stores. See <a href="deployment.html">How it is deployed</a>.</p>
+<hr />
+<p>Back to the <a href="index.html">guide landing</a>, or the <a href="index.html#i-want-to-where-to-go">section map</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="deployment.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: How it is deployed">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                How it is deployed
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1313 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+      
+        <link rel="next" href="install.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Welcome & editions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dashboard-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The dashboard at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-want-to-where-to-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I want to… (where to go)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-the-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of the product
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editions-one-product-tiered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editions: one product, tiered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to start
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dashboard-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The dashboard at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-want-to-where-to-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I want to… (where to go)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-the-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of the product
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editions-one-product-tiered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editions: one product, tiered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to start
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link">&para;</a></h1>
+<p><em>The operator's manual: what every screen does, where to find it, and how the moving parts actually work.</em></p>
+<div class="aim-band">
+<p><strong>Agent Access Manager is a security-and-governance layer in front of your LLM providers.</strong> You give it the master keys for your vendors (OpenAI, Anthropic, Gemini, a local Ollama, any OpenAI-compatible server). It hands your applications <strong>one</strong> OpenAI-compatible endpoint plus its own <strong>virtual keys</strong>, then routes and load-balances across vendors with fallback, meters token and cost budgets, screens content with guardrails, and writes a durable audit trail you can search, alert on, and report from.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Applies to</p>
+<p>This guide tracks the current release (dashboard <strong>v0.1.0</strong>). The guide is bundled with the product, so it always matches what you are running, online or air-gapped.</p>
+</div>
+<h2 id="how-to-read-this-guide">How to read this guide<a class="headerlink" href="#how-to-read-this-guide" title="Permanent link">&para;</a></h2>
+<p>The guide is organised <strong>exactly like the dashboard's left nav</strong>, so when you are on a screen you can find its section here by the same name. Every feature opens with a one-line "chip" that tells you the three things you usually want first:</p>
+<blockquote>
+<p><strong>Where:</strong> Operate ▸ Catalog · <strong>Who:</strong> operator and up (<code>MANAGE_DEPLOYMENTS</code>) · <strong>Editions:</strong> all</p>
+</blockquote>
+<ul>
+<li><strong>Where</strong> is the nav path (group ▸ page, plus the tab if the page has tabs).</li>
+<li><strong>Who</strong> is the minimum role and the backing capability (see <a href="concepts.html#roles-and-capabilities">Roles and capabilities</a>). The dashboard hides or disables what your role cannot use; the backend is the real gate.</li>
+<li><strong>Editions</strong> is which deployment tier the feature needs (see <a href="#editions-one-product-tiered">Editions</a>). Most features are in <strong>all</strong> editions; the security-operations and AI-classifier pieces need <strong>Pro</strong> / <strong>Pro AI</strong>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Two ways to drive everything</p>
+<p>Every screen is a thin face over a REST API under <code>/admin/**</code>. Anything you can click you can also script with <code>curl</code> or the SDK using the same endpoints (named in each section). The data plane your applications call is the separate, OpenAI-compatible <code>/v1/**</code> surface.</p>
+</div>
+<h2 id="the-dashboard-at-a-glance">The dashboard at a glance<a class="headerlink" href="#the-dashboard-at-a-glance" title="Permanent link">&para;</a></h2>
+<p>The console has a fixed left rail grouped into <strong>Overview</strong>, <strong>Operate</strong>, <strong>Govern</strong>, <strong>Investigate</strong>, and your <strong>Account</strong> (Settings, Profile) at the bottom. A top bar carries the command palette (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-k">K</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-k">K</kbd></span>), the notifications bell, the theme toggle, and your avatar.</p>
+<figure>
+<svg viewBox="0 0 880 612" role="img" aria-label="Dashboard navigation map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #EAE9E4;border-radius:12px;background:#FAFAF9;font-family:Inter,Segoe UI,system-ui,sans-serif">
+  <!-- topbar -->
+  <rect x="0" y="0" width="880" height="48" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <rect x="16" y="13" width="22" height="22" rx="6" fill="#4F46E5"/>
+  <text x="46" y="29" font-size="13" font-weight="600" fill="#1B1B1A">Agent Access Manager</text>
+  <rect x="300" y="11" width="300" height="26" rx="7" fill="#FAFAF9" stroke="#EAE9E4"/>
+  <text x="314" y="28" font-size="11" fill="#9D9D96">Search or jump to…</text>
+  <text x="566" y="27" font-size="10" fill="#9D9D96">⌘K</text>
+  <circle cx="812" cy="24" r="4" fill="#9D9D96"/><circle cx="836" cy="24" r="4" fill="#9D9D96"/>
+  <circle cx="861" cy="24" r="11" fill="#EEEDFB"/><text x="861" y="28" font-size="10" font-weight="600" fill="#4F46E5" text-anchor="middle">PT</text>
+  <!-- sidebar -->
+  <rect x="0" y="48" width="236" height="564" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <!-- Overview -->
+  <text x="20" y="80" font-size="12.5" fill="#6B6B65">▢  Overview</text>
+  <!-- Operate -->
+  <text x="20" y="112" font-size="10" letter-spacing="0.5" fill="#9D9D96">OPERATE</text>
+  <text x="20" y="134" font-size="12.5" fill="#6B6B65">▢  Organizations</text>
+  <text x="20" y="158" font-size="12.5" fill="#6B6B65">▢  Virtual keys</text>
+  <rect x="10" y="168" width="216" height="26" rx="8" fill="#EEEDFB"/>
+  <text x="20" y="185" font-size="12.5" font-weight="600" fill="#4F46E5">▣  Catalog</text>
+  <text x="20" y="210" font-size="12.5" fill="#6B6B65">▢  Playground</text>
+  <text x="20" y="234" font-size="12.5" fill="#6B6B65">▢  Budgets</text>
+  <text x="20" y="258" font-size="12.5" fill="#6B6B65">▢  Rate limits</text>
+  <!-- Govern -->
+  <text x="20" y="290" font-size="10" letter-spacing="0.5" fill="#9D9D96">GOVERN</text>
+  <text x="20" y="312" font-size="12.5" fill="#6B6B65">▢  Guardrails</text>
+  <text x="20" y="336" font-size="12.5" fill="#6B6B65">▢  Notifications</text>
+  <text x="20" y="360" font-size="12.5" fill="#6B6B65">▢  Audit &amp; usage</text>
+  <text x="20" y="384" font-size="12.5" fill="#6B6B65">▢  Reports</text>
+  <text x="20" y="408" font-size="12.5" fill="#6B6B65">▢  Sign-in activity</text>
+  <!-- Investigate -->
+  <text x="20" y="440" font-size="10" letter-spacing="0.5" fill="#9D9D96">INVESTIGATE</text>
+  <text x="20" y="462" font-size="12.5" fill="#6B6B65">▢  SIEM</text>
+  <text x="20" y="486" font-size="12.5" fill="#6B6B65">▢  UEBA</text>
+  <text x="20" y="510" font-size="12.5" fill="#6B6B65">▢  SOAR</text>
+  <!-- account -->
+  <line x1="12" y1="536" x2="224" y2="536" stroke="#EAE9E4"/>
+  <text x="20" y="562" font-size="12.5" fill="#6B6B65">▢  Settings</text>
+  <text x="20" y="586" font-size="12.5" fill="#6B6B65">▢  Profile</text>
+  <!-- content region -->
+  <text x="264" y="86" font-size="19" font-weight="600" fill="#1B1B1A">Catalog</text>
+  <text x="264" y="108" font-size="12" fill="#6B6B65">Providers and model deployments for this organization.</text>
+  <rect x="700" y="68" width="128" height="30" rx="8" fill="#4F46E5"/>
+  <text x="764" y="88" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">+ Add provider</text>
+  <rect x="264" y="128" width="564" height="92" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <rect x="264" y="232" width="564" height="92" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <rect x="264" y="336" width="564" height="92" rx="12" fill="#FFFFFF" stroke="#EAE9E4"/>
+  <text x="284" y="158" font-size="13" font-weight="600" fill="#1B1B1A">gpt-4o-mini</text>
+  <rect x="372" y="146" width="104" height="18" rx="9" fill="#EEEDFB"/><text x="424" y="159" font-size="10" fill="#4F46E5" text-anchor="middle">load-balanced ×2</text>
+  <text x="284" y="180" font-size="11.5" fill="#6B6B65">openai · azure-openai - spread + fallback across both</text>
+  <text x="284" y="262" font-size="13" font-weight="600" fill="#1B1B1A">claude-sonnet</text>
+  <text x="284" y="284" font-size="11.5" fill="#6B6B65">anthropic - $3.00 / $15.00 per Mtok</text>
+  <text x="284" y="366" font-size="13" font-weight="600" fill="#1B1B1A">local-llama</text>
+  <text x="284" y="388" font-size="11.5" fill="#6B6B65">ollama · http://ollama:11434/v1</text>
+  <text x="264" y="470" font-size="11" fill="#9D9D96">Each page opens with a title, a one-line subtitle, and an actions slot (top-right).</text>
+</svg>
+<figcaption><em>The console, with Catalog open. The left rail is the spine of this guide; every screen has the same title + actions header.</em></figcaption>
+</figure>
+
+<h2 id="i-want-to-where-to-go">I want to… (where to go)<a class="headerlink" href="#i-want-to-where-to-go" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>I want to…</th>
+<th>Go to</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Give an application access to models</td>
+<td><strong>Operate ▸ Virtual keys</strong></td>
+<td><a href="operate.html#virtual-keys">Virtual keys</a></td>
+</tr>
+<tr>
+<td>Connect OpenAI / Anthropic / Gemini / a local Ollama</td>
+<td><strong>Operate ▸ Catalog</strong></td>
+<td><a href="operate.html#catalog-providers-deployments-and-routing">Catalog</a></td>
+</tr>
+<tr>
+<td>Understand how a request picks a vendor</td>
+<td><strong>Operate ▸ Catalog</strong></td>
+<td><a href="operate.html#how-routing-works-the-hidden-engine">How routing works</a></td>
+</tr>
+<tr>
+<td>Cap spend in dollars or tokens</td>
+<td><strong>Operate ▸ Budgets</strong></td>
+<td><a href="operate.html#budgets">Budgets</a></td>
+</tr>
+<tr>
+<td>Throttle requests per minute (RPM/TPM)</td>
+<td><strong>Operate ▸ Rate limits</strong></td>
+<td><a href="operate.html#rate-limits">Rate limits</a></td>
+</tr>
+<tr>
+<td>Try a model in a chat window</td>
+<td><strong>Operate ▸ Playground</strong></td>
+<td><a href="operate.html#playground">Playground</a></td>
+</tr>
+<tr>
+<td>Add a teammate, make a team, send an invite</td>
+<td><strong>Operate ▸ Organizations</strong></td>
+<td><a href="operate.html#organizations">Organizations</a></td>
+</tr>
+<tr>
+<td>Stop PII or secrets leaking in prompts/replies</td>
+<td><strong>Govern ▸ Guardrails</strong></td>
+<td><a href="govern.html#guardrails">Guardrails</a></td>
+</tr>
+<tr>
+<td>Get emailed / paged when something fires</td>
+<td><strong>Govern ▸ Notifications</strong></td>
+<td><a href="govern.html#notifications">Notifications</a></td>
+</tr>
+<tr>
+<td>See every call and who spent what</td>
+<td><strong>Govern ▸ Audit &amp; usage</strong></td>
+<td><a href="govern.html#audit-usage">Audit &amp; usage</a></td>
+</tr>
+<tr>
+<td>Schedule a branded PDF / CSV cost report</td>
+<td><strong>Govern ▸ Reports</strong></td>
+<td><a href="govern.html#reports">Reports</a></td>
+</tr>
+<tr>
+<td>Check for failed or suspicious admin logins</td>
+<td><strong>Govern ▸ Sign-in activity</strong></td>
+<td><a href="govern.html#sign-in-activity">Sign-in activity</a></td>
+</tr>
+<tr>
+<td>Search and chart the security event stream</td>
+<td><strong>Investigate ▸ SIEM</strong></td>
+<td><a href="investigate.html#siem">SIEM</a></td>
+</tr>
+<tr>
+<td>Spot a key or IP behaving abnormally</td>
+<td><strong>Investigate ▸ UEBA</strong></td>
+<td><a href="investigate.html#ueba">UEBA</a></td>
+</tr>
+<tr>
+<td>Auto-contain abuse (quarantine / throttle)</td>
+<td><strong>Investigate ▸ SOAR</strong></td>
+<td><a href="investigate.html#soar">SOAR</a></td>
+</tr>
+<tr>
+<td>Configure the mail (SMTP) server</td>
+<td><strong>Settings</strong></td>
+<td><a href="account.html#settings">Settings</a></td>
+</tr>
+<tr>
+<td>Change theme, timezone, or sign out</td>
+<td><strong>Profile</strong></td>
+<td><a href="account.html#profile">Profile</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-shape-of-the-product">The shape of the product<a class="headerlink" href="#the-shape-of-the-product" title="Permanent link">&para;</a></h2>
+<p>Everything below rests on four ideas. They are explained in full in <a href="concepts.html">Core concepts</a>; the one-liners:</p>
+<ol>
+<li><strong>One endpoint, many vendors.</strong> Applications always speak the OpenAI chat shape to <code>/v1/**</code>. Agent Access Manager translates outbound to whatever the chosen vendor speaks. Adding a vendor never changes your application.</li>
+<li><strong>Everything is scoped.</strong> Keys, budgets, rate limits, and guardrail policies attach to a <strong>scope</strong>: an organization, a team, a project, or a single key. Limits are enforced at <strong>every</strong> level in the chain at once. See <a href="concepts.html#scopes-and-the-scope-chain">Scopes</a>.</li>
+<li><strong>Roles decide who can do what.</strong> A small capability model (owner ▸ admin ▸ operator ▸ user ▸ guest) gates the screens. Money is its own capability. See <a href="concepts.html#roles-and-capabilities">Roles and capabilities</a>.</li>
+<li><strong>Governance is event-driven.</strong> Every call publishes a durable event. That one stream feeds the audit trail, spend metering, alerts, reports, and the SOAR engine, plus (on Pro) the SIEM projection. Nothing you proxy waits on any of it.</li>
+</ol>
+<h2 id="editions-one-product-tiered">Editions: one product, tiered<a class="headerlink" href="#editions-one-product-tiered" title="Permanent link">&para;</a></h2>
+<p>There is <strong>one</strong> binary and <strong>one</strong> dashboard. An "edition" is just which optional infrastructure you switch on, layered as compose overlays (or Helm values) on the base stack. Nothing is a different build, so you can grow from a single box to a cluster without re-installing or relearning the UI.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Core</strong> (standalone)</th>
+<th><strong>Pro</strong> (+ OpenSearch)</th>
+<th><strong>Pro AI</strong> (+ AI sidecars)</th>
+<th><strong>Distributed</strong> (scale-out)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runs on</td>
+<td>one box: app + Postgres</td>
+<td>+ OpenSearch</td>
+<td>+ Presidio</td>
+<td>N app replicas + LB</td>
+</tr>
+<tr>
+<td>Gateway, keys, catalog, routing</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Guardrails (regex / pattern)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Budgets, rate limits, notifications, reports</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Audit trail system of record</td>
+<td>Postgres</td>
+<td><strong>OpenSearch</strong></td>
+<td>OpenSearch</td>
+<td>OpenSearch</td>
+</tr>
+<tr>
+<td>SOAR auto-containment (quarantine / throttle)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SIEM search, UEBA, detections, Sigma</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Remote <strong>AI-classifier</strong> guardrails (PII spans, content safety)</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Rate-limit counters across instances</td>
+<td>in-JVM</td>
+<td>in-JVM</td>
+<td>in-JVM</td>
+<td><strong>Valkey</strong></td>
+</tr>
+<tr>
+<td>Bundled SSO (Keycloak)</td>
+<td>optional overlay</td>
+<td>optional overlay</td>
+<td>optional overlay</td>
+<td>optional overlay</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Core (standalone)</label><label for="__tabbed_1_2">Pro (+ OpenSearch)</label><label for="__tabbed_1_3">Pro AI (+ sidecars)</label><label for="__tabbed_1_4">Distributed (scale-out)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The default and the lightest. The app plus a Postgres database, optionally with bundled Keycloak for SSO. Rate-limit counters live in the JVM, the audit trail is Postgres, and the SIEM and UEBA pages are dormant (SOAR still runs - it needs no OpenSearch). This is the right starting point for most on-prem installs and covers the entire data plane plus governance.</p>
+<p><em>Compose:</em> <code>deploy/compose/standalone.yml</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>Adds an OpenSearch cluster. This turns on the rest of the <strong>Investigate</strong> group (SIEM event search, UEBA anomaly detection, detection + Sigma rules - SOAR already ran without it) and promotes OpenSearch to the <strong>audit system of record</strong>, so the audit trail is searchable, retained longer, and snapshot-archivable. The dashboard is identical; the Investigate pages light up.</p>
+<p><em>Compose:</em> <code>standalone.yml</code> + <code>standalone.pro.yml</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>Adds the local AI sidecar for guardrails: <strong>Presidio</strong> (PII entity spans, redactable), so guardrails can do semantic PII detection rather than only regex, and no data leaves the box. It also unlocks the <em>remote</em> detector kinds generally, including a content-safety guard (<strong>Llama Guard</strong>-class) that you host and point a detector at - that one is not bundled, because a small guard model on a shared box screens too slowly and is evaded by padding.</p>
+<p><em>Compose:</em> + <code>standalone.ai.yml</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>The <code>gateway</code> data plane is stateless, so it scales horizontally behind a load balancer. Shared state moves to <strong>Valkey</strong> (the hot rate-limit counters and config-change broadcasts) and OpenSearch (the SIEM projection). A single instance owns the scheduled maintenance via a cluster lock. Single-host multi-replica uses <code>deploy/compose/distributed.yml</code>; multi-machine uses the Helm chart.</p>
+<p>See <a href="deployment.html">How Agent Access Manager is deployed</a> for the full infrastructure picture (Postgres, Valkey, OpenSearch, object storage, SMTP, AI servers).</p>
+</div>
+</div>
+</div>
+<h2 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h2>
+<div class="aim-grid">
+  <a class="aim-mod" href="concepts.html" style="--mod-accent:#0891b2">
+    <div class="top"><span class="name">Core concepts →</span></div>
+    <p class="desc">Scopes and the scope chain, roles and capabilities, virtual keys vs the admin plane, and the event/audit model. Read this once; everything else assumes it.</p>
+  </a>
+  <a class="aim-mod" href="operate.html" style="--mod-accent:#2563eb">
+    <div class="top"><span class="name">Operate →</span></div>
+    <p class="desc">Organizations, virtual keys, the catalog and how routing really works, the playground, budgets, and rate limits.</p>
+  </a>
+  <a class="aim-mod" href="govern.html" style="--mod-accent:#7c3aed">
+    <div class="top"><span class="name">Govern →</span></div>
+    <p class="desc">Guardrails, notifications, audit and usage, reports (with a worked example), and sign-in activity.</p>
+  </a>
+  <a class="aim-mod" href="investigate.html" style="--mod-accent:#db2777">
+    <div class="top"><span class="name">Investigate →</span></div>
+    <p class="desc">SIEM search and querying and UEBA anomaly detection (Pro), plus SOAR auto-containment on every tier.</p>
+  </a>
+  <a class="aim-mod" href="deployment.html" style="--mod-accent:#64748b">
+    <div class="top"><span class="name">How it is deployed →</span></div>
+    <p class="desc">Standalone vs distributed, and what each external piece does: AI servers, Postgres, Valkey, OpenSearch, object storage, and SMTP.</p>
+  </a>
+  <a class="aim-mod" href="account.html" style="--mod-accent:#64748b">
+    <div class="top"><span class="name">Settings & Profile →</span></div>
+    <p class="desc">The mail server, the authentication posture, and your personal preferences.</p>
+  </a>
+  <a class="aim-mod" href="recipes.html" style="--mod-accent:#16a34a">
+    <div class="top"><span class="name">Recipes & walkthroughs →</span></div>
+    <p class="desc">End-to-end tasks start to finish: onboard a tenant, set up cost-aware failover, lock down PII, ship a report, auto-contain abuse.</p>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="install.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Install
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

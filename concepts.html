@@ -1,0 +1,1310 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Agent Access Manager operator's manual: every dashboard screen, how the gateway routes, meters, and guards, the editions, and end-to-end recipes.">
+      
+      
+        <meta name="author" content="AethosHub">
+      
+      
+      
+        <link rel="prev" href="install.html">
+      
+      
+        <link rel="next" href="operate.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/aam-mark-blue.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Core concepts - Agent Access Manager - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-header__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agent Access Manager - User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Follow system theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Follow system theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome & editions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="concepts.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="operate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="govern.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Govern
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="investigate.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Investigate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="account.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Settings & Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="deployment.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How it is deployed
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes & walkthroughs
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Agent Access Manager - User Guide" class="md-nav__button md-logo" aria-label="Agent Access Manager - User Guide" data-md-component="logo">
+      
+  <img src="assets/aam-mark-white.svg" alt="logo">
+
+    </a>
+    Agent Access Manager - User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome & editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="concepts.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizations-teams-and-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizations, teams, and projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scopes-and-the-scope-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes and the scope chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles-and-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles and capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-kinds-of-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two kinds of credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-endpoint-many-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One endpoint, many vendors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-is-an-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everything is an event
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="govern.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Govern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="investigate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="account.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it is deployed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes & walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organizations-teams-and-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizations, teams, and projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scopes-and-the-scope-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes and the scope chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles-and-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles and capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-kinds-of-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two kinds of credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-endpoint-many-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One endpoint, many vendors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-is-an-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everything is an event
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="core-concepts">Core concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h1>
+<p><em>Read this once. Every other page assumes you know what a </em><em>scope</em><em> is, what your </em><em>role</em><em> can do, the two kinds of </em><em>keys</em><em>, and that everything is recorded as an </em><em>event</em><em>.</em></p>
+<h2 id="organizations-teams-and-projects">Organizations, teams, and projects<a class="headerlink" href="#organizations-teams-and-projects" title="Permanent link">&para;</a></h2>
+<p>Agent Access Manager is multi-tenant. The unit of tenancy is the <strong>organization</strong> (org). Inside an org you can carve out <strong>teams</strong> and <strong>projects</strong>:</p>
+<pre class="aim-diagram"><code>flowchart TD
+    O["Organization&lt;br/&gt;(the tenant: one base currency, its own catalog, its own data)"]
+    T1["Team: Platform"]
+    T2["Team: Data Science"]
+    P1["Project: chatbot"]
+    P2["Project: batch-jobs"]
+    P3["Project: research"]
+    O --&gt; T1
+    O --&gt; T2
+    T1 --&gt; P1
+    T1 --&gt; P2
+    T2 --&gt; P3</code></pre>
+<ul>
+<li>An <strong>org</strong> is the hard tenant boundary. Its catalog, budgets, guardrails, keys, audit trail, and spend are its own and are never shared with another org. Each org has one <strong>base currency</strong> (default USD) that all its pricing, budgets, and spend are denominated in, so totals add up with no currency conversion.</li>
+<li>A <strong>team</strong> groups people and work inside an org. Teams can have a <strong>lead</strong>, who gets a delegated slice of authority (for example, setting a project budget within their own team) without being an org admin.</li>
+<li>A <strong>project</strong> is the finest grouping, used to attribute keys, spend, and limits to a piece of work.</li>
+<li>A person has <strong>one account in one org</strong> (the one-account-one-org rule). A brand-new user with no org is sent to a short <strong>onboarding</strong> screen to create or join one.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Who manages the org vs the appliance</p>
+<p>Membership roles (below) let people run <strong>their own org</strong>. Separately, the <strong>platform admin</strong> is the person who operates the appliance itself (the break-glass <code>admin</code> login or an SSO user with the platform-admin role). The platform admin can act across every org and picks which org to act on per screen; an org member is always locked to their own org.</p>
+</div>
+<h2 id="scopes-and-the-scope-chain">Scopes and the scope chain<a class="headerlink" href="#scopes-and-the-scope-chain" title="Permanent link">&para;</a></h2>
+<p>Almost every control in the product (a virtual key, a budget, a rate limit, a guardrail policy) attaches to a <strong>scope</strong>. There are four scope levels, from broadest to narrowest:</p>
+<table>
+<thead>
+<tr>
+<th>Scope level</th>
+<th>What it means</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ORG</code></td>
+<td>The whole organization</td>
+<td>"Acme can spend $5,000/month total"</td>
+</tr>
+<tr>
+<td><code>TEAM</code></td>
+<td>One team in the org</td>
+<td>"Data Science is capped at 2M tokens/day"</td>
+</tr>
+<tr>
+<td><code>PROJECT</code></td>
+<td>One project in a team</td>
+<td>"The research project gets 60 requests/min"</td>
+</tr>
+<tr>
+<td><code>KEY</code></td>
+<td>A single virtual key</td>
+<td>"This one key may not exceed $50/day"</td>
+</tr>
+</tbody>
+</table>
+<p>When a request arrives, Agent Access Manager looks at the calling key and builds its <strong>scope chain</strong>: the key itself, plus whichever of project, team, and org it belongs to. A key always belongs to an org; team and project are optional and set when the key is issued.</p>
+<pre class="aim-diagram"><code>flowchart LR
+    K["KEY&lt;br/&gt;sk-… (this request)"] --&gt; P["PROJECT&lt;br/&gt;(if the key has one)"]
+    P --&gt; T["TEAM&lt;br/&gt;(if the key has one)"]
+    T --&gt; ORG["ORG&lt;br/&gt;(always)"]
+    classDef present fill:#E9F1FF,stroke:#2F7CFF,color:#0B0F1A;
+    class K,P,T,ORG present;</code></pre>
+<p>The single most important rule:</p>
+<div class="admonition abstract">
+<p class="admonition-title">How scopes apply</p>
+<p><strong>Budgets and rate limits are enforced at every level of the chain at once.</strong> A call charged to a key also counts against that key's project, team, and org. The request is allowed only if it passes at <em>all</em> present levels. So an org-wide monthly cap, a team's daily cap, and a single key's hourly cap can all be in force on the same request, and the tightest one wins.</p>
+<p><strong>Guardrail policies resolve most-specific-first.</strong> The narrowest scope that has a policy for a given content category decides the action, so a team can tighten (or loosen, if allowed) what the org sets.</p>
+</div>
+<p>This is why you can hand a team lead a key and trust that it cannot blow the org budget: the org cap still applies on top of anything set lower down. It is also why <strong>cost-aware failover</strong> works (see <a href="operate.html#how-routing-works-the-hidden-engine">routing</a>): when a per-deployment budget at any level is exhausted, the request fails over to a cheaper backend instead of being denied.</p>
+<h2 id="roles-and-capabilities">Roles and capabilities<a class="headerlink" href="#roles-and-capabilities" title="Permanent link">&para;</a></h2>
+<p>What you can do is decided by your <strong>org role</strong>. Roles are strictly nested (each higher role includes everything below it) and grant <strong>capabilities</strong>. The dashboard hides or disables what your capabilities do not cover, but the <strong>server is always the real gate</strong>, so hiding a button is a convenience, not the security boundary.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th style="text-align: center;">Guest</th>
+<th style="text-align: center;">User</th>
+<th style="text-align: center;">Operator</th>
+<th style="text-align: center;">Admin</th>
+<th style="text-align: center;">Owner</th>
+<th>What it unlocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VIEW</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Read the dashboards</td>
+</tr>
+<tr>
+<td><code>ISSUE_KEYS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Issue / manage virtual keys in your scope</td>
+</tr>
+<tr>
+<td><code>VIEW_BUDGETS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>See budgets and spend</td>
+</tr>
+<tr>
+<td><code>MANAGE_GATEWAY</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Guardrails, rate limits, SOAR rules, notifications</td>
+</tr>
+<tr>
+<td><code>MANAGE_DEPLOYMENTS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Catalog deployments (model alias, pricing)</td>
+</tr>
+<tr>
+<td><code>MANAGE_TEAMS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Create / manage teams</td>
+</tr>
+<tr>
+<td><code>MANAGE_MEMBERS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Invite / manage users and guests</td>
+</tr>
+<tr>
+<td><code>VIEW_SECURITY</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>SIEM, UEBA, SOAR, sign-in activity</td>
+</tr>
+<tr>
+<td><code>VIEW_REPORTS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>View reports</td>
+</tr>
+<tr>
+<td><code>MANAGE_REPORTS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Author / schedule / run reports</td>
+</tr>
+<tr>
+<td><code>MANAGE_PROVIDERS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Catalog providers + master vendor credentials</td>
+</tr>
+<tr>
+<td><code>MANAGE_BUDGETS</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Set budgets and cost caps (the money domain)</td>
+</tr>
+<tr>
+<td><code>MANAGE_ORG</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+<td>Org settings, archive, manage admins</td>
+</tr>
+</tbody>
+</table>
+<p>A few deliberate splits worth understanding:</p>
+<ul>
+<li><strong>The operator owns the rules of engagement, not the money.</strong> An operator configures guardrails, rate limits, routing (deployments), and SOAR, but cannot set budgets. Setting budgets is <code>MANAGE_BUDGETS</code>, which is admin and owner only.</li>
+<li><strong>The catalog is split by sensitivity.</strong> Connecting a vendor and storing its master key is <code>MANAGE_PROVIDERS</code> (admin-grade, because it holds a credential). Defining a model alias and its pricing is <code>MANAGE_DEPLOYMENTS</code> (operator and up, because routing is the operator's job). Everyone can read the catalog.</li>
+<li><strong>The team lead is a delegated grant outside the role table.</strong> A team lead (<code>is_lead</code> on their team membership) can curate their team's roster and set a <strong>project</strong> budget inside their team, without being an org admin. They cannot raise their team's own cap.</li>
+<li><strong>Anti-escalation.</strong> You can only assign or manage roles strictly below your own. An unknown stored role fails closed to <code>GUEST</code>.</li>
+</ul>
+<h2 id="two-kinds-of-credentials">Two kinds of credentials<a class="headerlink" href="#two-kinds-of-credentials" title="Permanent link">&para;</a></h2>
+<p>There are two completely separate front doors, and they never mix.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Virtual keys</strong> (the data plane)</th>
+<th><strong>The admin plane</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who uses it</td>
+<td>Your applications</td>
+<td>Humans (and scripts) administering the product</td>
+</tr>
+<tr>
+<td>Where</td>
+<td><code>POST /v1/chat/completions</code>, <code>/v1/messages</code>, …</td>
+<td><code>/admin/**</code> and the dashboard</td>
+</tr>
+<tr>
+<td>Credential</td>
+<td>A <code>sk-…</code> virtual key (Bearer)</td>
+<td>A browser session via SSO, the break-glass Basic admin, or an OIDC Bearer token</td>
+</tr>
+<tr>
+<td>Stored as</td>
+<td>SHA-256 hash (the secret is shown once at issue)</td>
+<td>No password store here; the human session lives at your IdP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtual keys</strong> are what you give to applications. They are 256-bit <code>sk-</code>-prefixed tokens, hashed at rest, and they carry their scope (org, optional team, optional project) so the whole governance chain is known the instant a request arrives. You issue, revoke, and cap them on the <a href="operate.html#virtual-keys">Virtual keys</a> page.</p>
+<p><strong>The admin plane</strong> is the dashboard and its API. It is <strong>SSO-first</strong>: if your deployment configures Keycloak (or any OIDC provider), people sign in there and Agent Access Manager only validates the resulting token. The local username/password form is a <strong>break-glass</strong> path, on by default until SSO is configured and then off. See <a href="account.html#authentication">Settings ▸ Authentication</a> and the deep dive in authentication.</p>
+<h2 id="one-endpoint-many-vendors">One endpoint, many vendors<a class="headerlink" href="#one-endpoint-many-vendors" title="Permanent link">&para;</a></h2>
+<p>Your applications always speak the <strong>OpenAI chat shape</strong> to Agent Access Manager, regardless of which vendor ultimately serves the request. Inbound surfaces (<code>/v1/chat/completions</code>, <code>/v1/responses</code>, <code>/v1/messages</code>, <code>/v1/embeddings</code>) are mapped to one <strong>canonical</strong> format; outbound adapters translate that to whatever the chosen vendor speaks (OpenAI-compatible passthrough, or translating adapters for Anthropic, Gemini, and Vertex).</p>
+<p>The practical consequences for you:</p>
+<ul>
+<li>You can switch a model alias from, say, OpenAI to a local Ollama or to Anthropic <strong>without changing a line in your application</strong>. Only the <a href="operate.html#catalog-providers-deployments-and-routing">Catalog</a> changes.</li>
+<li>A model <strong>alias</strong> (what your app asks for, like <code>gpt-4o-mini</code> or <code>fast-cheap</code>) is decoupled from the <strong>upstream model</strong> a vendor actually runs. Budgets and reports key on the alias, so they stay stable even as you re-point it.</li>
+</ul>
+<h2 id="everything-is-an-event">Everything is an event<a class="headerlink" href="#everything-is-an-event" title="Permanent link">&para;</a></h2>
+<p>Every proxied call publishes a durable <strong>event</strong> in the same transaction as the work. That one event stream is the backbone of all governance:</p>
+<pre class="aim-diagram"><code>flowchart LR
+    GW["A proxied call"] --&gt;|publishes| OB[("durable outbox")]
+    OB --&gt; AUD["Audit trail&lt;br/&gt;(Audit &amp; usage)"]
+    OB --&gt; SPEND["Spend metering&lt;br/&gt;(Budgets)"]
+    OB --&gt; ALERT["Alerts&lt;br/&gt;(Notifications)"]
+    OB -. "Pro" .-&gt; SIEM["SIEM / UEBA / SOAR"]
+    AUD --&gt; RPT["Reports"]</code></pre>
+<p>Because the event is written transactionally (a durable outbox), a call's audit record can never be lost, and consumers run <strong>off the hot path</strong>: a slow analytics query or an OpenSearch outage adds zero latency to the call your application made. This is why the same data shows up consistently in <a href="govern.html#audit-usage">Audit &amp; usage</a>, <a href="operate.html#budgets">Budgets</a>, <a href="govern.html#reports">Reports</a>, and (on Pro) <a href="investigate.html#siem">SIEM</a>: they are all reading the one event stream, each for their own purpose.</p>
+<p>The events worth knowing by name:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Emitted when</th>
+<th>Feeds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LlmCallCompleted</code></td>
+<td>Any completion attempt finishes</td>
+<td>Audit trail, spend, SIEM/SOAR</td>
+</tr>
+<tr>
+<td><code>GuardrailTriggered</code></td>
+<td>A guardrail flags / redacts / blocks</td>
+<td>Guardrail trail, alerts, SIEM/SOAR</td>
+</tr>
+<tr>
+<td><code>SecurityActionTaken</code></td>
+<td>SOAR contains something (quarantine / throttle)</td>
+<td>Audit, SIEM</td>
+</tr>
+<tr>
+<td><code>ScopeDeleted</code></td>
+<td>An org or team is hard-deleted</td>
+<td>Tenant purge: budgets, keys, rules, audit are erased</td>
+</tr>
+<tr>
+<td><code>ConfigChanged</code></td>
+<td>An admin changes config</td>
+<td>The admin-action audit trail</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Next: <strong><a href="operate.html">Operate →</a></strong> for the day-to-day screens, or jump to any section from the <a href="index.html#i-want-to-where-to-go">I want to… table</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="install.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Install
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="operate.html" class="md-footer__link md-footer__link--next" aria-label="Next: Operate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Operate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mermaid.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
